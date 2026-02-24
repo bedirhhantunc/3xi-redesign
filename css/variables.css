@@ -1,0 +1,94 @@
+:root {
+  /* Colors - Primary */
+  --color-navy: #0A1628;
+  --color-charcoal: #1A1A2E;
+  --color-navy-light: #0F1D32;
+
+  /* Colors - Accent */
+  --color-gold: #C9A96E;
+  --color-gold-light: #D4B87A;
+  --color-gold-glow: rgba(201, 169, 110, 0.3);
+
+  /* Colors - Neutral */
+  --color-white: #F5F5F7;
+  --color-gray: #E8E8ED;
+  --color-gray-mid: #8A8A9A;
+  --color-black: #0D0D0D;
+
+  /* Colors - Semantic */
+  --color-success: #4CAF50;
+  --color-glass: rgba(10, 22, 40, 0.7);
+
+  /* Typography */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Font sizes */
+  --text-h1: 72px;
+  --text-h2: 48px;
+  --text-h3: 32px;
+  --text-h4: 24px;
+  --text-body: 18px;
+  --text-small: 14px;
+  --text-stats: 56px;
+
+  /* Line heights */
+  --leading-h1: 80px;
+  --leading-h2: 56px;
+  --leading-h3: 40px;
+  --leading-body: 28px;
+  --leading-small: 20px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+  --space-6xl: 192px;
+
+  /* Layout */
+  --container-max: 1200px;
+  --grid-gap: 24px;
+  --section-padding: 128px;
+  --section-padding-mobile: 64px;
+
+  /* Effects */
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-card-hover: 0 16px 48px rgba(0, 0, 0, 0.2);
+  --shadow-gold: 0 0 40px rgba(201, 169, 110, 0.3);
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-full: 50%;
+
+  /* Glass */
+  --glass-bg: rgba(10, 22, 40, 0.7);
+  --glass-blur: blur(20px);
+
+  /* Gradient */
+  --gradient-hero: linear-gradient(135deg, #0A1628 0%, #1A1A2E 50%, #0F1D32 100%);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --text-h1: 40px;
+    --text-h2: 32px;
+    --text-h3: 24px;
+    --text-h4: 20px;
+    --text-stats: 40px;
+    --leading-h1: 48px;
+    --leading-h2: 40px;
+    --leading-h3: 32px;
+    --section-padding: 64px;
+  }
+}
