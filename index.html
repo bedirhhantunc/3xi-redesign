@@ -56,40 +56,128 @@
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
-    <!-- Background Video (BeleggersFair) -->
+    <!-- Background Video (BeleggersFair) — fullscreen, horizontal fit -->
     <div class="hero__video-bg">
       <iframe src="https://player.vimeo.com/video/1138048668?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
     <div class="hero__video-overlay"></div>
     <canvas class="hero__canvas" id="hero-canvas"></canvas>
+
     <div class="container">
-      <div class="hero__content">
-        <div class="gold-line" data-animate></div>
-        <p class="label hero__label">Finansal Medya</p>
-        <h1 class="hero__title">Finansal Medyada 30 Yıllık Liderlik</h1>
-        <p class="hero__subtitle">Etkileyen içerik. Sonuç getiren stratejiler.<br>Güçlü ve kanıtlanmış formatlarla finansal karar vericileri buluşturuyoruz. Etkinlikler, bültenler, web siteleri ve dergilerle çağdaş ve yenilikçi bir pazar yaklaşımı sunuyoruz.</p>
-        <div class="hero__buttons">
-          <a href="#services" class="btn btn--gold" data-magnetic>Keşfet <span class="btn__arrow">&rarr;</span></a>
-          <a href="contact.html" class="btn btn--outline">Book a Call</a>
+      <div class="hero__grid">
+
+        <!-- LEFT COLUMN -->
+        <div class="hero__content">
+          <!-- Badge -->
+          <div class="hero__badge" data-animate="fade-up">
+            <span class="hero__badge-dot"></span>
+            <span>Ödüllü Finansal Medya</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#facc15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+
+          <!-- Heading -->
+          <h1 class="hero__title" data-animate="fade-up">
+            Finansal Medyada<br>
+            <span class="hero__title-gold">30 Yıllık</span><br>
+            Liderlik
+          </h1>
+
+          <!-- Description -->
+          <p class="hero__subtitle" data-animate="fade-up">
+            Etkileyen içerik. Sonuç getiren stratejiler. Güçlü ve kanıtlanmış formatlarla finansal karar vericileri buluşturuyoruz.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero__buttons" data-animate="fade-up">
+            <a href="#services" class="btn btn--gold btn--hero" data-magnetic>
+              Keşfet <span class="btn__arrow">&rarr;</span>
+            </a>
+            <a href="contact.html" class="btn btn--glass">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Showreel
+            </a>
+          </div>
         </div>
-        <div class="hero__stats">
-          <div class="stats">
-            <div class="stat">
-              <div class="stat__number" data-count="33">0</div>
-              <div class="stat__label">Marka</div>
-            </div>
-            <div class="stat">
-              <div class="stat__number" data-count="24.500">0</div>
-              <div class="stat__label">Danışman</div>
-            </div>
-            <div class="stat">
-              <div class="stat__number" data-count="68.000">0</div>
-              <div class="stat__label">Yatırımcı</div>
+
+        <!-- RIGHT COLUMN — Glass Stats Card -->
+        <div class="hero__right" data-animate="fade-up">
+
+          <!-- Stats Card -->
+          <div class="glass-card">
+            <div class="glass-card__glow"></div>
+            <div class="glass-card__inner">
+              <!-- Header -->
+              <div class="glass-card__header">
+                <div class="glass-card__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
+                </div>
+                <div>
+                  <div class="glass-card__big-number" data-count="150">0</div>
+                  <div class="glass-card__big-label">Tamamlanan Proje</div>
+                </div>
+              </div>
+
+              <!-- Progress Bar -->
+              <div class="glass-card__progress">
+                <div class="glass-card__progress-header">
+                  <span>Müşteri Memnuniyeti</span>
+                  <span class="glass-card__progress-value">98%</span>
+                </div>
+                <div class="glass-card__progress-track">
+                  <div class="glass-card__progress-fill" style="width: 98%"></div>
+                </div>
+              </div>
+
+              <div class="glass-card__divider"></div>
+
+              <!-- Mini Stats -->
+              <div class="glass-card__stats">
+                <div class="glass-card__stat">
+                  <span class="glass-card__stat-value" data-count="33">0</span>
+                  <span class="glass-card__stat-label">Marka</span>
+                </div>
+                <div class="glass-card__stat-sep"></div>
+                <div class="glass-card__stat">
+                  <span class="glass-card__stat-value">24.5K</span>
+                  <span class="glass-card__stat-label">Danışman</span>
+                </div>
+                <div class="glass-card__stat-sep"></div>
+                <div class="glass-card__stat">
+                  <span class="glass-card__stat-value">68K</span>
+                  <span class="glass-card__stat-label">Yatırımcı</span>
+                </div>
+              </div>
+
+              <!-- Tags -->
+              <div class="glass-card__tags">
+                <span class="glass-card__tag">
+                  <span class="glass-card__tag-pulse"></span>
+                  <span class="glass-card__tag-ping"></span>
+                  AKTİF
+                </span>
+                <span class="glass-card__tag">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#eab308" stroke="none"><path d="M2 4l3 12h14l3-12H2zm3 12l-1 4h16l-1-4H5zm5-8h4v4h-4V8z"/></svg>
+                  PREMIUM
+                </span>
+              </div>
             </div>
           </div>
+
+          <!-- Marquee Partners Card -->
+          <div class="glass-card glass-card--marquee">
+            <p class="glass-card__marquee-title">Sektör Liderlerinin Güvendiği</p>
+            <div class="glass-card__marquee-wrap">
+              <div class="glass-card__marquee-track">
+                <span>ABN AMRO</span><span>ING</span><span>RABOBANK</span><span>BLACKROCK</span><span>ROBECO</span><span>BNP PARIBAS</span><span>AEGON</span><span>ALLIANZ</span>
+                <span>ABN AMRO</span><span>ING</span><span>RABOBANK</span><span>BLACKROCK</span><span>ROBECO</span><span>BNP PARIBAS</span><span>AEGON</span><span>ALLIANZ</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
+
     <div class="hero__scroll scroll-indicator">
       <span>Scroll</span>
       <div class="hero__scroll-arrow"></div>
