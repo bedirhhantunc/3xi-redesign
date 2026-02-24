@@ -34,6 +34,7 @@
   font-size: 80px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all var(--transition-base);
+  overflow: hidden;
 }
 
 .service-block:hover .service-block__visual {
