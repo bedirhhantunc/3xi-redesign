@@ -80,8 +80,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .section--light {
-  background-color: var(--color-white);
-  color: var(--color-navy);
+  background-color: var(--color-charcoal);
+  color: var(--color-white);
 }
 
 .section--charcoal {

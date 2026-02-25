@@ -1,98 +1,150 @@
 /* ============================================
-   NAVIGATION
+   NAVIGATION — Floating Pill
    ============================================ */
 .nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
-  padding: var(--space-lg) 0;
-  transition: all var(--transition-base);
+  width: min(900px, calc(100% - 48px));
 }
 
-.nav--scrolled {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  padding: var(--space-md) 0;
-  border-bottom: 1px solid rgba(201, 169, 110, 0.1);
-}
-
-.nav__inner {
+.nav__pill {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
+  gap: var(--space-xl);
+  padding: 10px 10px 10px 24px;
+  background: rgba(15, 15, 20, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
+.nav--scrolled .nav__pill {
+  background: rgba(10, 22, 40, 0.85);
+  border-color: rgba(102, 45, 145, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(102, 45, 145, 0.05);
+}
+
+/* Logo */
 .nav__logo {
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--color-white);
-  letter-spacing: 0.05em;
-  transition: font-size var(--transition-base);
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: auto;
 }
 
-.nav--scrolled .nav__logo {
-  font-size: 22px;
+.nav__logo img {
+  height: 28px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  position: relative;
+  top: -2px;
 }
 
-.nav__logo span {
-  color: var(--color-gold);
+.nav__logo:hover img {
+  transform: scale(1.08);
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
 }
 
+/* Links container */
 .nav__links {
   display: flex;
   align-items: center;
   gap: var(--space-xl);
   list-style: none;
+  position: relative;
 }
 
+/* Sliding indicator — disabled */
+
+/* Nav link — animated dual-text */
 .nav__link {
-  font-size: var(--text-small);
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 18px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav__link-text {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.nav__link-text span {
+  display: block;
+  font-size: 13px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-gray);
-  transition: color var(--transition-base);
-  position: relative;
-  text-decoration: none;
+  line-height: 18px;
+  white-space: nowrap;
 }
 
-.nav__link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
+.nav__link-text span:first-child {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nav__link-text span:last-child {
+  color: var(--color-white);
+}
+
+.nav__link:hover .nav__link-text {
+  transform: translateY(-50%);
+}
+
+.nav__link--active .nav__link-text span:first-child {
+  color: var(--color-white);
+}
+
+/* CTA Button inside pill */
+.nav__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
   background: var(--color-gold);
-  transition: width var(--transition-base);
+  color: #fff;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
-.nav__link:hover {
-  color: var(--color-white);
+.nav__cta:hover {
+  background: var(--color-gold-light);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(102, 45, 145, 0.3);
+  transform: translateY(-1px);
 }
 
-.nav__link:hover::after,
-.nav__link--active::after {
-  width: 100%;
+.nav__cta .btn__arrow {
+  transition: transform 0.3s;
+  display: inline-block;
 }
 
-.nav__link--active {
-  color: var(--color-white);
+.nav__cta:hover .btn__arrow {
+  transform: translateX(3px);
 }
 
 /* Hamburger */
 .nav__hamburger {
   display: none;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   cursor: pointer;
   padding: 8px;
   background: none;
@@ -102,62 +154,82 @@
 
 .nav__hamburger span {
   display: block;
-  width: 28px;
+  width: 22px;
   height: 2px;
   background: var(--color-white);
-  transition: all var(--transition-base);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: center;
 }
 
 .nav__hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 6px);
+  transform: rotate(45deg) translate(4px, 5px);
 }
 
 .nav__hamburger.active span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
 .nav__hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -6px);
+  transform: rotate(-45deg) translate(4px, -5px);
 }
 
-/* Mobile menu */
-.nav__mobile-menu {
+/* Mobile links — inside the pill */
+.nav__mobile-links {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100vh;
-  background: var(--color-navy);
-  z-index: 999;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-xl);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-base);
+  gap: 4px;
+  padding: 16px 8px 8px;
 }
 
-.nav__mobile-menu.active {
-  display: flex;
-  opacity: 1;
-  pointer-events: all;
-}
-
-.nav__mobile-menu a {
-  font-family: var(--font-heading);
-  font-size: var(--text-h3);
-  color: var(--color-white);
+.nav__mobile-links a {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  opacity: 0;
-  transform: translateY(20px);
+  padding: 12px 16px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
 }
 
+.nav__mobile-links a:hover,
+.nav__mobile-links a.active {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  .nav {
+    left: 16px;
+    right: 16px;
+    transform: none;
+    width: auto;
+    max-width: none;
+  }
+
+  .nav__pill {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 12px 16px;
+  }
+
   .nav__links { display: none; }
+  .nav__cta { display: none; }
   .nav__hamburger { display: flex; }
+
+  /* Open state — pill expands */
+  .nav--open .nav__pill {
+    border-radius: 20px;
+    background: rgba(10, 22, 40, 0.92);
+    border-color: rgba(102, 45, 145, 0.15);
+  }
+
+  .nav--open .nav__mobile-links {
+    display: flex;
+  }
 }
 
 /* ============================================
@@ -184,14 +256,15 @@
 
 .btn--gold {
   background: var(--color-gold);
-  color: var(--color-navy);
+  color: #fff;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .btn--gold:hover {
   background: var(--color-gold-light);
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 4px 20px rgba(102, 45, 145, 0.3);
   transform: translateY(-2px);
-  color: var(--color-navy);
+  color: #fff;
 }
 
 .btn--outline {
@@ -235,7 +308,7 @@
 .card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-card-hover);
-  border-color: rgba(201, 169, 110, 0.2);
+  border-color: rgba(102, 45, 145, 0.2);
 }
 
 .card__icon {

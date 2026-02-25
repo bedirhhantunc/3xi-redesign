@@ -22,8 +22,8 @@ function initTiltCards() {
       const rotateY = ((x - centerX) / centerX) * maxTilt;
 
       card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-      card.style.boxShadow = '0 16px 48px rgba(0, 0, 0, 0.2), 0 0 30px rgba(201, 169, 110, 0.1)';
-      card.style.borderColor = 'rgba(201, 169, 110, 0.3)';
+      card.style.boxShadow = '0 16px 48px rgba(0, 0, 0, 0.2), 0 0 30px rgba(102, 45, 145, 0.1)';
+      card.style.borderColor = 'rgba(102, 45, 145, 0.3)';
     });
 
     card.addEventListener('mouseleave', () => {
@@ -41,26 +41,5 @@ function initTiltCards() {
 }
 
 function initMagneticButtons() {
-  if (window.innerWidth <= 768) return;
-  if (matchMedia('(hover: none)').matches) return;
-
-  document.querySelectorAll('[data-magnetic]').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-
-      btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
-    });
-
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transition = 'transform 0.4s ease';
-      btn.style.transform = 'translate(0, 0)';
-      setTimeout(() => { btn.style.transition = ''; }, 400);
-    });
-
-    btn.addEventListener('mouseenter', () => {
-      btn.style.transition = '';
-    });
-  });
+  // Disabled — clean CSS hover transitions only
 }

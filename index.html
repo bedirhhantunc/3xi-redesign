@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/variables.css">
@@ -31,382 +31,339 @@
 
   <!-- ========== NAVIGATION ========== -->
   <nav class="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo"><img src="https://www.triplei.nl/wp-content/uploads/2024/03/400.png" alt="TRIPLE i" style="height:40px;"></a>
+    <div class="nav__pill">
+      <span class="nav__logo"><img src="https://www.triplei.nl/wp-content/uploads/2024/03/400.png" alt="TRIPLE i"></span>
       <ul class="nav__links">
-        <li><a href="index.html" class="nav__link nav__link--active">Ana Sayfa</a></li>
-        <li><a href="over-ons.html" class="nav__link">Hakkımızda</a></li>
-        <li><a href="diensten.html" class="nav__link">Hizmetler</a></li>
-        <li><a href="contact.html" class="nav__link">İletişim</a></li>
-        <li><a href="contact.html" class="btn btn--gold" data-magnetic>Book a Call <span class="btn__arrow">&rarr;</span></a></li>
+        <li><a href="index.html" class="nav__link nav__link--active"><span class="nav__link-text"><span>Ana Sayfa</span><span>Ana Sayfa</span></span></a></li>
+        <li><a href="over-ons.html" class="nav__link"><span class="nav__link-text"><span>Hakkımızda</span><span>Hakkımızda</span></span></a></li>
+        <li><a href="diensten.html" class="nav__link"><span class="nav__link-text"><span>Hizmetler</span><span>Hizmetler</span></span></a></li>
       </ul>
+      <a href="contact.html" class="nav__cta">Bize Ulaşın <span class="btn__arrow">&rarr;</span></a>
       <button class="nav__hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
+      <div class="nav__mobile-links">
+        <a href="index.html" class="active">Ana Sayfa</a>
+        <a href="over-ons.html">Hakkımızda</a>
+        <a href="diensten.html">Hizmetler</a>
+        <a href="contact.html">İletişim</a>
+      </div>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div class="nav__mobile-menu">
-    <a href="index.html">Ana Sayfa</a>
-    <a href="over-ons.html">Hakkımızda</a>
-    <a href="diensten.html">Hizmetler</a>
-    <a href="contact.html">İletişim</a>
-  </div>
-
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
-    <!-- Background Video (BeleggersFair) — fullscreen, horizontal fit -->
+    <!-- Background Video (BeleggersFair) — fullscreen cover -->
     <div class="hero__video-bg">
       <iframe src="https://player.vimeo.com/video/1138048668?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
     <div class="hero__video-overlay"></div>
-    <canvas class="hero__canvas" id="hero-canvas"></canvas>
+    <!-- Inner ring overlay for depth -->
+    <div class="hero__ring-overlay"></div>
 
-    <div class="container">
-      <div class="hero__grid">
+    <div class="hero__center">
+      <div class="hero__center-inner">
 
-        <!-- LEFT COLUMN -->
-        <div class="hero__content">
-          <!-- Badge -->
-          <div class="hero__badge" data-animate="fade-up">
-            <span class="hero__badge-dot"></span>
-            <span>Ödüllü Finansal Medya</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#facc15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <!-- Badge -->
+        <div class="hero__badge hero__fade hero__fade--1">
+          <span class="hero__badge-label">30 Jaar</span>
+          <span class="hero__badge-text">Hollanda'nın Lider Finansal Medya Grubu</span>
+        </div>
+
+        <!-- Title — Shutter Text Effect -->
+        <h1 class="hero__title hero__fade hero__fade--2">
+          <span class="shutter-line" data-shutter>FİNANSAL MEDYADA</span>
+          <span class="shutter-line shutter-line--accent" data-shutter>GÜÇ BİRLİĞİ</span>
+        </h1>
+
+        <!-- Description -->
+        <p class="hero__subtitle hero__fade hero__fade--3">
+          Etkileyen içerik. Sonuç getiren stratejiler. 33 marka, 3 küme ve 30 yıllık deneyimle finansal karar vericileri buluşturuyoruz.
+        </p>
+
+        <!-- Buttons — flagship events -->
+        <div class="hero__buttons hero__fade hero__fade--4">
+          <a href="https://www.beleggersfair.nl" target="_blank" class="hero__btn-primary">
+            Yatırımcı Fuarı
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.hypovak.nl" target="_blank" class="hero__btn-secondary">
+            HypoVak
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Brand logos — typewriter tooltips -->
+        <div class="brand-row hero__fade hero__fade--5">
+          <div class="brand-item" data-href="https://www.hypovak.nl" data-text="Öncü ipotek ve konut piyasası etkinliği" data-name="HypoVak" data-tag="Hypotheken">
+            <img src="assets/images/brands/hypo-icon.jpg" alt="HypoVak" class="brand-item__avatar" draggable="false">
           </div>
-
-          <!-- Heading -->
-          <h1 class="hero__title" data-animate="fade-up">
-            Finansal Medyada<br>
-            <span class="hero__title-gold">30 Yıllık</span><br>
-            Liderlik
-          </h1>
-
-          <!-- Description -->
-          <p class="hero__subtitle" data-animate="fade-up">
-            Etkileyen içerik. Sonuç getiren stratejiler. Güçlü ve kanıtlanmış formatlarla finansal karar vericileri buluşturuyoruz.
-          </p>
-
-          <!-- CTA Buttons -->
-          <div class="hero__buttons" data-animate="fade-up">
-            <a href="#services" class="btn btn--gold btn--hero" data-magnetic>
-              Keşfet <span class="btn__arrow">&rarr;</span>
-            </a>
-            <a href="contact.html" class="btn btn--glass">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Showreel
-            </a>
+          <div class="brand-item" data-href="https://www.cashcow.nl" data-text="Bireysel yatırımcılar için finansal dergi ve platform" data-name="CashCow" data-tag="Investments">
+            <img src="assets/images/brands/cash-icon.jpg" alt="CashCow" class="brand-item__avatar" draggable="false">
+          </div>
+          <div class="brand-item" data-href="https://www.infinance.nl" data-text="Finansal danışmanlar için meslek dergisi ve platform" data-name="InFinance" data-tag="Hypotheken">
+            <img src="assets/images/brands/if-icon.jpg" alt="InFinance" class="brand-item__avatar" draggable="false">
+          </div>
+          <div class="brand-item" data-href="https://www.beleggersfair.nl" data-text="Hollanda'nın en büyük yatırımcı fuarı — 68.000 yatırımcıya ulaşıyor" data-name="BeleggersFair" data-tag="Investments">
+            <img src="assets/images/brands/bf-icon.jpg" alt="BeleggersFair" class="brand-item__avatar" draggable="false">
+          </div>
+          <div class="brand-item" data-href="https://beursinside.nl" data-text="Günlük borsa analizi ve yatırım bülteni" data-name="BeursInside" data-tag="Investments">
+            <img src="assets/images/brands/bi-icon.jpg" alt="BeursInside" class="brand-item__avatar" draggable="false">
+          </div>
+          <div class="brand-item" data-href="https://theasset.nl" data-text="Varlık yönetimi ve yatırım platformu" data-name="TheAsset" data-tag="Investments">
+            <img src="assets/images/brands/asset-icon.jpg" alt="TheAsset" class="brand-item__avatar" draggable="false">
+          </div>
+          <div class="brand-item" data-href="https://www.triplei.nl" data-text="Kripto ve blockchain kongresi" data-name="Crypto Congres" data-tag="Investments">
+            <img src="assets/images/brands/crypto-icon.jpg" alt="Crypto Congres" class="brand-item__avatar" draggable="false">
           </div>
         </div>
 
-        <!-- RIGHT COLUMN — Glass Stats Card -->
-        <div class="hero__right" data-animate="fade-up">
-
-          <!-- Stats Card -->
-          <div class="glass-card">
-            <div class="glass-card__glow"></div>
-            <div class="glass-card__inner">
-              <!-- Header -->
-              <div class="glass-card__header">
-                <div class="glass-card__icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
-                </div>
-                <div>
-                  <div class="glass-card__big-number" data-count="150">0</div>
-                  <div class="glass-card__big-label">Tamamlanan Proje</div>
-                </div>
-              </div>
-
-              <!-- Progress Bar -->
-              <div class="glass-card__progress">
-                <div class="glass-card__progress-header">
-                  <span>Müşteri Memnuniyeti</span>
-                  <span class="glass-card__progress-value">98%</span>
-                </div>
-                <div class="glass-card__progress-track">
-                  <div class="glass-card__progress-fill" style="width: 98%"></div>
-                </div>
-              </div>
-
-              <div class="glass-card__divider"></div>
-
-              <!-- Mini Stats -->
-              <div class="glass-card__stats">
-                <div class="glass-card__stat">
-                  <span class="glass-card__stat-value" data-count="33">0</span>
-                  <span class="glass-card__stat-label">Marka</span>
-                </div>
-                <div class="glass-card__stat-sep"></div>
-                <div class="glass-card__stat">
-                  <span class="glass-card__stat-value">24.5K</span>
-                  <span class="glass-card__stat-label">Danışman</span>
-                </div>
-                <div class="glass-card__stat-sep"></div>
-                <div class="glass-card__stat">
-                  <span class="glass-card__stat-value">68K</span>
-                  <span class="glass-card__stat-label">Yatırımcı</span>
-                </div>
-              </div>
-
-              <!-- Tags -->
-              <div class="glass-card__tags">
-                <span class="glass-card__tag">
-                  <span class="glass-card__tag-pulse"></span>
-                  <span class="glass-card__tag-ping"></span>
-                  AKTİF
-                </span>
-                <span class="glass-card__tag">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#eab308" stroke="none"><path d="M2 4l3 12h14l3-12H2zm3 12l-1 4h16l-1-4H5zm5-8h4v4h-4V8z"/></svg>
-                  PREMIUM
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Marquee Partners Card -->
-          <div class="glass-card glass-card--marquee">
-            <p class="glass-card__marquee-title">Sektör Liderlerinin Güvendiği</p>
-            <div class="glass-card__marquee-wrap">
-              <div class="glass-card__marquee-track">
-                <span>ABN AMRO</span><span>ING</span><span>RABOBANK</span><span>BLACKROCK</span><span>ROBECO</span><span>BNP PARIBAS</span><span>AEGON</span><span>ALLIANZ</span>
-                <span>ABN AMRO</span><span>ING</span><span>RABOBANK</span><span>BLACKROCK</span><span>ROBECO</span><span>BNP PARIBAS</span><span>AEGON</span><span>ALLIANZ</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
       </div>
-    </div>
 
-    <div class="hero__scroll scroll-indicator">
-      <span>Scroll</span>
-      <div class="hero__scroll-arrow"></div>
     </div>
   </section>
 
-  <!-- ========== ABOUT TEASER ========== -->
-  <section class="section section--light" id="about">
-    <div class="container">
-      <div class="about-teaser">
-        <div class="about-teaser__visual" data-animate="fade-in">
-          <img src="assets/images/photos/gebouw-met-logo.jpg" alt="TRIPLE i kantoor — De Steiger 24, Almere" class="about-teaser__image">
-          <div class="about-teaser__number-overlay">30</div>
+  <!-- ========== ABOUT TEASER — Bento Card ========== -->
+  <section class="bento-about" id="about">
+    <!-- Grid background -->
+    <div class="bento-about__grid-bg"></div>
+    <div class="bento-about__overlay"></div>
+
+    <div class="bento-about__inner" data-animate="fade-up">
+      <div class="bento-about__card">
+        <!-- Copy side -->
+        <div class="bento-about__copy">
+          <div class="bento-about__capsule">30 Jaar Ervaring</div>
+          <div class="bento-about__lede">
+            <h2 class="bento-about__heading">Yıllık Finansal Medya Deneyimi</h2>
+            <p class="bento-about__desc">30 yılı aşkın süredir finans sektöründe birleştirici güç olarak yer alıyoruz. Finansal profesyonelleri, yatırımcıları ve markaları güçlü içerik platformları, öncü etkinlikler ve veri odaklı içgörülerle buluşturuyoruz.</p>
+          </div>
+          <div class="bento-about__cta">
+            <a href="over-ons.html" class="bento-about__btn">Hakkımızda <span class="btn__arrow">&rarr;</span></a>
+          </div>
+          <div class="bento-about__stats">
+            <span><strong>33</strong> Marka</span>
+            <span><strong>68.000</strong> Yatırımcı</span>
+            <span><strong>24.500</strong> Danışman</span>
+          </div>
         </div>
-        <div class="about-teaser__text" data-animate="fade-up">
-          <div class="gold-line" data-animate></div>
-          <h2>Yıllık Finansal Medya Deneyimi</h2>
-          <p>30 yılı aşkın süredir finans sektöründe birleştirici güç olarak yer alıyoruz. Finansal profesyonelleri, yatırımcıları ve markaları güçlü içerik platformları, öncü etkinlikler ve veri odaklı içgörülerle buluşturuyoruz.</p>
-          <a href="over-ons.html" class="about-teaser__link">Hakkımızda daha fazla <span class="btn__arrow">&rarr;</span></a>
-        </div>
+        <!-- Image side -->
+        <figure class="bento-about__image">
+          <img src="assets/images/photos/gebouw-met-logo.jpg" alt="TRIPLE i kantoor — De Steiger 24, Almere" loading="lazy">
+        </figure>
+      </div>
+      <div class="bento-about__footnote">
+        <span>Content die raakt. Resultaten die tellen.</span>
+        <span>Amsterdam &mdash; Almere &mdash; 1995'ten beri</span>
       </div>
     </div>
   </section>
 
   <!-- ========== SERVICES PREVIEW ========== -->
-  <section class="section section--dark services-preview" id="services">
+  <section class="section section--dark" id="services">
     <div class="container">
       <div class="gold-line" data-animate style="margin: 0 auto var(--space-lg);"></div>
       <h2 class="text-center" data-animate="fade-up">Uzmanlık Alanlarımız</h2>
-      <p class="text-center" data-animate="fade-up">Finans sektörüne özel çözümler</p>
-      <div class="services-grid" data-stagger>
-        <div class="card" data-tilt>
-          <div class="card__icon">📊</div>
-          <h3 class="card__title">Portfoliofacts</h3>
-          <p class="card__text">Finansal profesyoneller ve yatırımcılar için uzman platformlar. Finansal kararları destekleyen veri odaklı içgörüler.</p>
+      <p class="text-center" data-animate="fade-up" style="color: var(--color-gray-mid); max-width: 600px; margin: var(--space-md) auto var(--space-2xl);">Üç küme, 33 marka, sınırsız olanak</p>
+
+      <!-- 01 Investments -->
+      <div class="svc-block" data-animate="fade-up">
+        <div class="svc-block__visual">
+          <img src="assets/images/photos/1.jpg" alt="BeleggersFair — Hollanda'nın en büyük yatırımcı etkinliği">
         </div>
-        <div class="card" data-tilt>
-          <div class="card__icon">🏢</div>
-          <h3 class="card__title">Sektörler & Markalar</h3>
-          <p class="card__text">Üç küme altında 33 marka: Yatırımlar, İpotek ve Sigorta. Cash Magazine'den BeleggersFair'e kadar.</p>
-        </div>
-        <div class="card" data-tilt>
-          <div class="card__icon">📡</div>
-          <h3 class="card__title">Mediatype</h3>
-          <p class="card__text">Etkinlikler, yayınlar, günlük 70.000 bülten, dijital platformlar ve Gouden Lotus gibi prestijli ödüller.</p>
-        </div>
-        <div class="card" data-tilt>
-          <div class="card__icon">🤝</div>
-          <h3 class="card__title">İlişkiler & Ortaklar</h3>
-          <p class="card__text">ABN AMRO, ING, BlackRock, Robeco ve diğer önde gelen finans kuruluşları dahil 300'den fazla iş ortağı.</p>
+        <div class="svc-block__content">
+          <span class="svc-block__number">01</span>
+          <span class="svc-block__label">INVESTMENTS</span>
+          <h3 class="svc-block__title">Yatırımcılar & Traderlar</h3>
+          <p class="svc-block__text">Cash Magazine, BeleggersFair, CashCow, BeursInside ve TheAsset. Öncü dergilerden Hollanda'nın en büyük yatırımcı etkinliğine kadar — 68.000 bireysel yatırımcıya ulaşıyoruz.</p>
+          <a href="diensten.html" class="svc-block__link">Detaylı Bilgi <span>&rarr;</span></a>
         </div>
       </div>
+
+      <!-- 02 Hypotheken -->
+      <div class="svc-block svc-block--reverse" data-animate="fade-up">
+        <div class="svc-block__visual">
+          <img src="assets/images/photos/2.jpg" alt="HypoVak — ipotek ve konut piyasası etkinliği">
+        </div>
+        <div class="svc-block__content">
+          <span class="svc-block__number">02</span>
+          <span class="svc-block__label">HYPOTHEKEN</span>
+          <h3 class="svc-block__title">Finansal Danışmanlar</h3>
+          <p class="svc-block__text">InFinance, HypoVak, Hypotheek Business Club ve Gouden Lotus Ödülleri. 24.500 ipotek profesyoneli için eksiksiz platform.</p>
+          <a href="diensten.html" class="svc-block__link">Detaylı Bilgi <span>&rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- 03 Insurance -->
+      <div class="svc-block" data-animate="fade-up">
+        <div class="svc-block__visual svc-block__visual--contain">
+          <img src="assets/images/brands/vvp.jpg" alt="VVP — finansal danışmanlar için meslek dergisi">
+        </div>
+        <div class="svc-block__content">
+          <span class="svc-block__number">03</span>
+          <span class="svc-block__label">INSURANCE</span>
+          <h3 class="svc-block__title">Sigorta Profesyonelleri</h3>
+          <p class="svc-block__text">VVP — sigorta sektöründeki finansal danışmanlar için meslek dergisi. Basılı, dijital ve etkinlik kombinasyonuyla sigorta dünyasında fark yaratan profesyonellere ulaşıyoruz.</p>
+          <a href="diensten.html" class="svc-block__link">Detaylı Bilgi <span>&rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- 04 Mediatype -->
+      <div class="svc-block svc-block--reverse" data-animate="fade-up">
+        <div class="svc-block__visual">
+          <img src="assets/images/infographics/mediatype.jpg" alt="Mediatype TRIPLE i 2025">
+        </div>
+        <div class="svc-block__content">
+          <span class="svc-block__number">04</span>
+          <span class="svc-block__label">MEDIATYPE</span>
+          <h3 class="svc-block__title">Etkinlikler, Yayınlar & Dijital</h3>
+          <p class="svc-block__text">Her yıl öncü etkinlikler düzenliyoruz. Meslek dergileri yayınlıyor, günlük 70.000 bülten gönderiyor ve Gouden Lotus ile CashCow Ödülleri gibi prestijli ödüller veriyoruz.</p>
+          <a href="diensten.html" class="svc-block__link">Detaylı Bilgi <span>&rarr;</span></a>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ========== BRANDS SHOWCASE ========== -->
-  <section class="section section--charcoal" id="brands">
+  <!-- ========== PARTNERS — Marquee Logo Scroller ========== -->
+  <section class="section section--dark" id="partners">
     <div class="container">
-      <div class="brands__header" data-animate="fade-up">
-        <div class="gold-line" data-animate style="margin: 0 auto var(--space-lg);"></div>
-        <h2>33 Markamız</h2>
-        <p>Üç küme altında: Yatırımlar, İpotek & Sigorta</p>
-      </div>
-      <div class="brands__grid" data-stagger style="grid-template-columns: repeat(4, 1fr);">
-        <div class="brand-card">
-          <img src="assets/images/brands/bf-icon.jpg" alt="BeleggersFair" class="brand-card__logo">
-          <h3 class="brand-card__name">BeleggersFair</h3>
-          <p class="brand-card__desc">Hollanda'nın en büyük yatırımcı etkinliği</p>
+      <div class="marquee-partners" data-animate="fade-up">
+        <!-- Header — grid: title left, description right -->
+        <div class="marquee-partners__header">
+          <h2 class="marquee-partners__title">Güvenilen <span class="text-gold">Yüzlerce</span> Ortak</h2>
+          <p class="marquee-partners__desc">BeleggersFair, HypoVak ve etkinliklerimizde birlikte çalıştığımız önde gelen finans kuruluşları</p>
         </div>
-        <div class="brand-card">
-          <div class="brand-card__icon">💰</div>
-          <h3 class="brand-card__name">CashCow</h3>
-          <p class="brand-card__desc">Finansal platform: haberler, analiz ve eğitim</p>
-        </div>
-        <div class="brand-card">
-          <div class="brand-card__icon">📰</div>
-          <h3 class="brand-card__name">Cash Magazine</h3>
-          <p class="brand-card__desc">Önde gelen finansal dergi</p>
-        </div>
-        <div class="brand-card">
-          <img src="assets/images/brands/hypo-icon.jpg" alt="HypoVak" class="brand-card__logo">
-          <h3 class="brand-card__name">HypoVak</h3>
-          <p class="brand-card__desc">İpotek ve konut piyasası etkinliği</p>
-        </div>
-        <div class="brand-card">
-          <img src="assets/images/brands/bi-icon.jpg" alt="BeursInside" class="brand-card__logo">
-          <h3 class="brand-card__name">BeursInside</h3>
-          <p class="brand-card__desc">Kripto ve borsa platformu, kongre ve ödüller</p>
-        </div>
-        <div class="brand-card">
-          <img src="assets/images/brands/infinance.jpg" alt="InFinance" class="brand-card__logo">
-          <h3 class="brand-card__name">InFinance</h3>
-          <p class="brand-card__desc">Meslek dergisi, web sitesi ve günlük bülten</p>
-        </div>
-        <div class="brand-card">
-          <div class="brand-card__icon">🏆</div>
-          <h3 class="brand-card__name">TheAsset</h3>
-          <p class="brand-card__desc">Varlık yönetimi sitesi ve e-dergi</p>
-        </div>
-        <div class="brand-card">
-          <img src="assets/images/brands/vvp.jpg" alt="VVP" class="brand-card__logo">
-          <h3 class="brand-card__name">VVP</h3>
-          <p class="brand-card__desc">Finansal danışmanlar için meslek dergisi</p>
-        </div>
-      </div>
-      <div class="video-container" data-animate="fade-up">
-        <iframe src="https://player.vimeo.com/video/1138048668?background=1&autoplay=0&loop=1&byline=0&title=0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="video-container" data-animate="fade-up" style="margin-top: var(--space-lg);">
-        <iframe src="https://player.vimeo.com/video/1123911840?background=1&autoplay=0&loop=1&byline=0&title=0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="infographics-showcase" data-animate="fade-up" style="margin-top: var(--space-2xl);">
-        <h3 style="text-align: center; margin-bottom: var(--space-lg); color: var(--color-white);">Portföy & Medya Genel Görünümü</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
-          <div class="infographic-card">
-            <img src="assets/images/infographics/portfoliofacts.jpg" alt="Portfoliofacts TRIPLE i 2025 — Investment & Insurance clusters" style="width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);">
+
+        <!-- Marquee — Row 1 -->
+        <div class="marquee-partners__scroll">
+          <div class="marquee-partners__track">
+            <div class="marquee-partners__card" style="--g-from:#00A65A;--g-via:#008C4A;--g-to:#006B38"><span>ABN AMRO</span></div>
+            <div class="marquee-partners__card" style="--g-from:#FF8533;--g-via:#FF6600;--g-to:#CC5200"><span>ING</span></div>
+            <div class="marquee-partners__card" style="--g-from:#3366CC;--g-via:#0033A0;--g-to:#002266"><span>RABOBANK</span></div>
+            <div class="marquee-partners__card" style="--g-from:#FF8C33;--g-via:#EA650D;--g-to:#B84E0A"><span>NATIONALE-NEDERLANDEN</span></div>
+            <div class="marquee-partners__card" style="--g-from:#4D7ACC;--g-via:#003082;--g-to:#001F52"><span>OBVION</span></div>
+            <div class="marquee-partners__card" style="--g-from:#3D5A80;--g-via:#1A2744;--g-to:#0D1422"><span>EDGE CAPITAL</span></div>
+            <div class="marquee-partners__card" style="--g-from:#3355E0;--g-via:#0028B5;--g-to:#001A75"><span>SAXO</span></div>
+            <div class="marquee-partners__card" style="--g-from:#6CE89E;--g-via:#50C878;--g-to:#339955"><span>ETORO</span></div>
+            <div class="marquee-partners__card" style="--g-from:#FF4D5E;--g-via:#E4002B;--g-to:#A3001F"><span>SOCIETE GENERALE</span></div>
+            <div class="marquee-partners__card" style="--g-from:#33CC77;--g-via:#00A651;--g-to:#007A3B"><span>TRIODOS BANK</span></div>
+            <div class="marquee-partners__card" style="--g-from:#3D3D4A;--g-via:#1E1E28;--g-to:#0F0F14"><span>TRADE REPUBLIC</span></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="marquee-partners__card" style="--g-from:#00A65A;--g-via:#008C4A;--g-to:#006B38"><span>ABN AMRO</span></div>
+            <div class="marquee-partners__card" style="--g-from:#FF8533;--g-via:#FF6600;--g-to:#CC5200"><span>ING</span></div>
+            <div class="marquee-partners__card" style="--g-from:#3366CC;--g-via:#0033A0;--g-to:#002266"><span>RABOBANK</span></div>
+            <div class="marquee-partners__card" style="--g-from:#FF8C33;--g-via:#EA650D;--g-to:#B84E0A"><span>NATIONALE-NEDERLANDEN</span></div>
+            <div class="marquee-partners__card" style="--g-from:#4D7ACC;--g-via:#003082;--g-to:#001F52"><span>OBVION</span></div>
+            <div class="marquee-partners__card" style="--g-from:#3D5A80;--g-via:#1A2744;--g-to:#0D1422"><span>EDGE CAPITAL</span></div>
+            <div class="marquee-partners__card" style="--g-from:#3355E0;--g-via:#0028B5;--g-to:#001A75"><span>SAXO</span></div>
+            <div class="marquee-partners__card" style="--g-from:#6CE89E;--g-via:#50C878;--g-to:#339955"><span>ETORO</span></div>
+            <div class="marquee-partners__card" style="--g-from:#FF4D5E;--g-via:#E4002B;--g-to:#A3001F"><span>SOCIETE GENERALE</span></div>
+            <div class="marquee-partners__card" style="--g-from:#33CC77;--g-via:#00A651;--g-to:#007A3B"><span>TRIODOS BANK</span></div>
+            <div class="marquee-partners__card" style="--g-from:#3D3D4A;--g-via:#1E1E28;--g-to:#0F0F14"><span>TRADE REPUBLIC</span></div>
           </div>
-          <div class="infographic-card">
-            <img src="assets/images/infographics/mediatype.jpg" alt="Mediatype TRIPLE i 2025 — Events, magazines, websites, nieuwsbrieven" style="width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);">
+        </div>
+
+        <!-- Marquee — Row 2 (reverse) -->
+        <div class="marquee-partners__scroll">
+          <div class="marquee-partners__track marquee-partners__track--reverse">
+            <div class="marquee-partners__card" style="--g-from:#FF8080;--g-via:#E05555;--g-to:#B33333"><span>SCALABLE CAPITAL</span></div>
+            <div class="marquee-partners__card" style="--g-from:#4D80CC;--g-via:#003082;--g-to:#002060"><span>ASR</span></div>
+            <div class="marquee-partners__card" style="--g-from:#5C7A99;--g-via:#2D3E50;--g-to:#1A2530"><span>FINTESSA</span></div>
+            <div class="marquee-partners__card" style="--g-from:#4D99E6;--g-via:#0070C0;--g-to:#004D85"><span>ANNEXUM</span></div>
+            <div class="marquee-partners__card" style="--g-from:#4D4D5C;--g-via:#222233;--g-to:#111118"><span>OKX</span></div>
+            <div class="marquee-partners__card" style="--g-from:#33CC66;--g-via:#009B3A;--g-to:#006B28"><span>FLORIUS</span></div>
+            <div class="marquee-partners__card" style="--g-from:#FFCC55;--g-via:#F5A623;--g-to:#C48518"><span>CENTRAAL BEHEER</span></div>
+            <div class="marquee-partners__card" style="--g-from:#3366AA;--g-via:#002D72;--g-to:#001A42"><span>NIBC</span></div>
+            <div class="marquee-partners__card" style="--g-from:#33AA66;--g-via:#006B38;--g-to:#004825"><span>FIDELITY</span></div>
+            <div class="marquee-partners__card" style="--g-from:#FF4D55;--g-via:#D0021B;--g-to:#8C0112"><span>BNR</span></div>
+            <div class="marquee-partners__card" style="--g-from:#3377AA;--g-via:#00427A;--g-to:#002B50"><span>HANDELSBANKEN</span></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="marquee-partners__card" style="--g-from:#FF8080;--g-via:#E05555;--g-to:#B33333"><span>SCALABLE CAPITAL</span></div>
+            <div class="marquee-partners__card" style="--g-from:#4D80CC;--g-via:#003082;--g-to:#002060"><span>ASR</span></div>
+            <div class="marquee-partners__card" style="--g-from:#5C7A99;--g-via:#2D3E50;--g-to:#1A2530"><span>FINTESSA</span></div>
+            <div class="marquee-partners__card" style="--g-from:#4D99E6;--g-via:#0070C0;--g-to:#004D85"><span>ANNEXUM</span></div>
+            <div class="marquee-partners__card" style="--g-from:#4D4D5C;--g-via:#222233;--g-to:#111118"><span>OKX</span></div>
+            <div class="marquee-partners__card" style="--g-from:#33CC66;--g-via:#009B3A;--g-to:#006B28"><span>FLORIUS</span></div>
+            <div class="marquee-partners__card" style="--g-from:#FFCC55;--g-via:#F5A623;--g-to:#C48518"><span>CENTRAAL BEHEER</span></div>
+            <div class="marquee-partners__card" style="--g-from:#3366AA;--g-via:#002D72;--g-to:#001A42"><span>NIBC</span></div>
+            <div class="marquee-partners__card" style="--g-from:#33AA66;--g-via:#006B38;--g-to:#004825"><span>FIDELITY</span></div>
+            <div class="marquee-partners__card" style="--g-from:#FF4D55;--g-via:#D0021B;--g-to:#8C0112"><span>BNR</span></div>
+            <div class="marquee-partners__card" style="--g-from:#3377AA;--g-via:#00427A;--g-to:#002B50"><span>HANDELSBANKEN</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== PARTNERS ========== -->
-  <section class="section section--dark partners" id="partners">
-    <div class="container">
-      <div class="gold-line" data-animate style="margin: 0 auto var(--space-lg);"></div>
-      <h2 data-animate="fade-up">Güvenilen <span class="text-gold">300+</span> Ortak</h2>
-      <p class="partners__sub" data-animate="fade-up">Önde gelen finans kuruluşlarıyla birlikte</p>
-    </div>
-    <div class="partners__carousels">
-      <div class="carousel">
-        <div class="carousel__track">
-          <span class="carousel__item">ABN AMRO</span>
-          <span class="carousel__item">ING</span>
-          <span class="carousel__item">RABOBANK</span>
-          <span class="carousel__item">BLACKROCK</span>
-          <span class="carousel__item">ROBECO</span>
-          <span class="carousel__item">BNP PARIBAS</span>
-          <span class="carousel__item">AEGON</span>
-          <span class="carousel__item">ALLIANZ</span>
-          <span class="carousel__item">TRIODOS BANK</span>
-          <span class="carousel__item">DEGIRO</span>
-          <span class="carousel__item">FRANKLIN TEMPLETON</span>
-          <span class="carousel__item">AMUNDI</span>
-          <!-- Duplicate for seamless loop -->
-          <span class="carousel__item">ABN AMRO</span>
-          <span class="carousel__item">ING</span>
-          <span class="carousel__item">RABOBANK</span>
-          <span class="carousel__item">BLACKROCK</span>
-          <span class="carousel__item">ROBECO</span>
-          <span class="carousel__item">BNP PARIBAS</span>
-          <span class="carousel__item">AEGON</span>
-          <span class="carousel__item">ALLIANZ</span>
-          <span class="carousel__item">TRIODOS BANK</span>
-          <span class="carousel__item">DEGIRO</span>
-          <span class="carousel__item">FRANKLIN TEMPLETON</span>
-          <span class="carousel__item">AMUNDI</span>
-        </div>
-      </div>
-      <div class="carousel">
-        <div class="carousel__track carousel__track--reverse">
-          <span class="carousel__item">STATE STREET</span>
-          <span class="carousel__item">CREDIT AGRICOLE</span>
-          <span class="carousel__item">COMMERZBANK</span>
-          <span class="carousel__item">ACHMEA</span>
-          <span class="carousel__item">NN GROUP</span>
-          <span class="carousel__item">ASR</span>
-          <span class="carousel__item">BITVAVO</span>
-          <span class="carousel__item">ETORO</span>
-          <span class="carousel__item">VANGUARD</span>
-          <span class="carousel__item">PICTET</span>
-          <span class="carousel__item">INVESCO</span>
-          <span class="carousel__item">SCHRODERS</span>
-          <!-- Duplicate for seamless loop -->
-          <span class="carousel__item">STATE STREET</span>
-          <span class="carousel__item">CREDIT AGRICOLE</span>
-          <span class="carousel__item">COMMERZBANK</span>
-          <span class="carousel__item">ACHMEA</span>
-          <span class="carousel__item">NN GROUP</span>
-          <span class="carousel__item">ASR</span>
-          <span class="carousel__item">BITVAVO</span>
-          <span class="carousel__item">ETORO</span>
-          <span class="carousel__item">VANGUARD</span>
-          <span class="carousel__item">PICTET</span>
-          <span class="carousel__item">INVESCO</span>
-          <span class="carousel__item">SCHRODERS</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== INSIGHTS ========== -->
+  <!-- ========== CONTENT CHANNELS — Profile Card Carousel ========== -->
   <section class="section section--charcoal" id="insights">
     <div class="container">
       <div class="insights__header" data-animate="fade-up">
         <div>
           <div class="gold-line" data-animate></div>
-          <h2>Son Yazılar</h2>
+          <h2>İçerik Kanallarımız</h2>
         </div>
-        <a href="#" class="insights__link">Tüm yazıları görüntüle <span class="btn__arrow">&rarr;</span></a>
+        <a href="https://www.triplei.nl" target="_blank" class="insights__link">triplei.nl <span class="btn__arrow">&rarr;</span></a>
       </div>
-      <div class="insights-grid" data-stagger>
-        <a href="#" class="insight-card">
-          <div class="insight-card__image insight-card__image--1" style="background: url('assets/images/photos/1.jpg') center/cover;"></div>
-          <div class="insight-card__body">
-            <p class="insight-card__category">Insights</p>
-            <h3 class="insight-card__title">Future of Web Design: Emerging Trends for 2025</h3>
-            <p class="insight-card__date">januari 15, 2024</p>
+
+      <!-- Carousel -->
+      <div class="channel-carousel" data-animate="fade-up">
+        <div class="channel-carousel__stage">
+          <!-- Slide 1: Etkinlikler -->
+          <div class="channel-carousel__slide channel-carousel__slide--active" data-slide="0">
+            <div class="channel-carousel__image">
+              <img src="assets/images/photos/1.jpg" alt="BeleggersFair — Hollanda'nın en büyük yatırımcı fuarı" draggable="false">
+            </div>
+            <div class="channel-carousel__card">
+              <span class="channel-carousel__category">Etkinlikler</span>
+              <h3 class="channel-carousel__name">BeleggersFair, HypoVak & Crypto Congres</h3>
+              <p class="channel-carousel__desc">Hollanda'nın en büyük yatırımcı fuarı BeleggersFair, ipotek sektörünün öncü etkinliği HypoVak ve Crypto Congres. CashCow Ödülleri ve Gouden Lotus Ödülleri ile her yıl sektörün en iyilerini onurlandırıyoruz.</p>
+              <a href="https://www.beleggersfair.nl" target="_blank" class="channel-carousel__link">beleggersfair.nl <span>&rarr;</span></a>
+            </div>
           </div>
-        </a>
-        <a href="#" class="insight-card">
-          <div class="insight-card__image insight-card__image--2" style="background: url('assets/images/photos/2.jpg') center/cover;"></div>
-          <div class="insight-card__body">
-            <p class="insight-card__category">Technology</p>
-            <h3 class="insight-card__title">Navigating the Challenges of Digital Transformation</h3>
-            <p class="insight-card__date">maart 27, 2024</p>
+
+          <!-- Slide 2: Dijital Platformlar -->
+          <div class="channel-carousel__slide" data-slide="1">
+            <div class="channel-carousel__image">
+              <img src="assets/images/photos/2.jpg" alt="HypoVak — ipotek ve konut piyasası etkinliği" draggable="false">
+            </div>
+            <div class="channel-carousel__card">
+              <span class="channel-carousel__category">Dijital Platformlar</span>
+              <h3 class="channel-carousel__name">CashCow, BeursInside & InFinance</h3>
+              <p class="channel-carousel__desc">CashCow ve BeursInside ile 68.000 bireysel yatırımcıya günlük borsa haberleri ve analizler sunuyoruz. InFinance ile 24.500 finansal danışmana yönelik profesyonel sektörel içerik üretiyoruz.</p>
+              <a href="https://www.cashcow.nl" target="_blank" class="channel-carousel__link">cashcow.nl <span>&rarr;</span></a>
+            </div>
           </div>
-        </a>
-        <a href="#" class="insight-card">
-          <div class="insight-card__image insight-card__image--3" style="background: url('assets/images/blog/ethereum-app-development.jpg') center/cover;"></div>
-          <div class="insight-card__body">
-            <p class="insight-card__category">Tutorials</p>
-            <h3 class="insight-card__title">Maximizing ROI with Data-Driven Marketing Campaigns</h3>
-            <p class="insight-card__date">april 22, 2024</p>
+
+          <!-- Slide 3: Yayınlar -->
+          <div class="channel-carousel__slide" data-slide="2">
+            <div class="channel-carousel__image">
+              <img src="assets/images/photos/gebouw-met-logo.jpg" alt="TRIPLE i kantoor — De Steiger 24, Almere" draggable="false">
+            </div>
+            <div class="channel-carousel__card">
+              <span class="channel-carousel__category">Yayınlar</span>
+              <h3 class="channel-carousel__name">Cash Magazine, VVP & TheAsset</h3>
+              <p class="channel-carousel__desc">68.000+ yatırımcıya günlük bülten gönderiyoruz. Cash Magazine, 80 yıllık meslek dergisi VVP ve profesyonel yatırımcılar için TheAsset ile basılı ve dijital yayıncılıkta öncü konumumuzu sürdürüyoruz.</p>
+              <a href="https://www.triplei.nl" target="_blank" class="channel-carousel__link">triplei.nl <span>&rarr;</span></a>
+            </div>
           </div>
-        </a>
+        </div>
+
+        <!-- Navigation -->
+        <div class="channel-carousel__nav">
+          <button class="channel-carousel__arrow" data-dir="prev" aria-label="Önceki">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <div class="channel-carousel__dots">
+            <button class="channel-carousel__dot channel-carousel__dot--active" data-dot="0" aria-label="Slide 1"></button>
+            <button class="channel-carousel__dot" data-dot="1" aria-label="Slide 2"></button>
+            <button class="channel-carousel__dot" data-dot="2" aria-label="Slide 3"></button>
+          </div>
+          <button class="channel-carousel__arrow" data-dir="next" aria-label="Sonraki">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -443,7 +400,7 @@
           <a href="contact.html" class="footer__link">İletişim</a>
         </div>
         <div>
-          <h4 class="footer__heading">Platforms</h4>
+          <h4 class="footer__heading">Platformlar</h4>
           <a href="https://www.cashcow.nl" target="_blank" class="footer__link">CashCow</a>
           <a href="https://www.beleggersfair.nl" target="_blank" class="footer__link">Beleggersfair</a>
           <a href="https://www.hypovak.nl" target="_blank" class="footer__link">HypoVak</a>
@@ -453,10 +410,10 @@
         </div>
         <div>
           <h4 class="footer__heading">İletişim</h4>
-          <p class="footer__text" style="margin-bottom: var(--space-sm);"><strong>Yatırımcı</strong></p>
+          <p class="footer__text" style="margin-bottom: var(--space-sm);"><strong>Yatırımcılar</strong></p>
           <a href="mailto:F.Roersma@3xi.nl" class="footer__link">F.Roersma@3xi.nl</a>
           <a href="tel:+31646486222" class="footer__link">+31 646 486 222</a>
-          <p class="footer__text" style="margin-bottom: var(--space-sm); margin-top: var(--space-md);"><strong>Danışman</strong></p>
+          <p class="footer__text" style="margin-bottom: var(--space-sm); margin-top: var(--space-md);"><strong>Danışmanlar</strong></p>
           <a href="mailto:T.Chengadu@3xi.nl" class="footer__link">T.Chengadu@3xi.nl</a>
           <a href="tel:+31614162360" class="footer__link">+31 614 162 360</a>
         </div>

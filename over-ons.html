@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,74 +31,414 @@
 
   <!-- ========== NAVIGATION ========== -->
   <nav class="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo"><img src="https://www.triplei.nl/wp-content/uploads/2024/03/400.png" alt="TRIPLE i" style="height:40px;"></a>
+    <div class="nav__pill">
+      <span class="nav__logo"><img src="https://www.triplei.nl/wp-content/uploads/2024/03/400.png" alt="TRIPLE i"></span>
       <ul class="nav__links">
-        <li><a href="index.html" class="nav__link">Ana Sayfa</a></li>
-        <li><a href="over-ons.html" class="nav__link nav__link--active">Hakkımızda</a></li>
-        <li><a href="diensten.html" class="nav__link">Hizmetler</a></li>
-        <li><a href="contact.html" class="nav__link">İletişim</a></li>
-        <li><a href="contact.html" class="btn btn--gold" data-magnetic>Book a Call <span class="btn__arrow">&rarr;</span></a></li>
+        <li><a href="index.html" class="nav__link"><span class="nav__link-text"><span>Ana Sayfa</span><span>Ana Sayfa</span></span></a></li>
+        <li><a href="over-ons.html" class="nav__link nav__link--active"><span class="nav__link-text"><span>Hakkımızda</span><span>Hakkımızda</span></span></a></li>
+        <li><a href="diensten.html" class="nav__link"><span class="nav__link-text"><span>Hizmetler</span><span>Hizmetler</span></span></a></li>
       </ul>
+      <a href="contact.html" class="nav__cta">Bize Ulaşın <span class="btn__arrow">&rarr;</span></a>
       <button class="nav__hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
+      <div class="nav__mobile-links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="over-ons.html" class="active">Hakkımızda</a>
+        <a href="diensten.html">Hizmetler</a>
+        <a href="contact.html">İletişim</a>
+      </div>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div class="nav__mobile-menu">
-    <a href="index.html">Ana Sayfa</a>
-    <a href="over-ons.html">Hakkımızda</a>
-    <a href="diensten.html">Hizmetler</a>
-    <a href="contact.html">İletişim</a>
-  </div>
+  <!-- ========== PAGE HERO — Lamp Effect ========== -->
+  <section class="lamp">
+    <!-- Lamp light effect -->
+    <div class="lamp__effect">
+      <!-- Left conic gradient cone -->
+      <div class="lamp__cone lamp__cone--left">
+        <div class="lamp__cone-mask-bottom"></div>
+        <div class="lamp__cone-mask-side"></div>
+      </div>
+      <!-- Right conic gradient cone -->
+      <div class="lamp__cone lamp__cone--right">
+        <div class="lamp__cone-mask-bottom"></div>
+        <div class="lamp__cone-mask-side"></div>
+      </div>
+      <!-- Background blur layer -->
+      <div class="lamp__bg-blur"></div>
+      <!-- Backdrop blur -->
+      <div class="lamp__backdrop"></div>
+      <!-- Large glow -->
+      <div class="lamp__glow"></div>
+      <!-- Inner glow -->
+      <div class="lamp__glow-inner"></div>
+      <!-- Sharp light line -->
+      <div class="lamp__line"></div>
+      <!-- Top cover -->
+      <div class="lamp__cover"></div>
+    </div>
 
-  <!-- ========== PAGE HERO ========== -->
-  <section class="page-hero">
+    <!-- Content -->
+    <div class="lamp__content">
+      <h1 class="lamp__title">3XI Hakkında</h1>
+      <p class="lamp__sub">30 yılı aşkın süredir finans sektöründe birleştirici güç</p>
+    </div>
+  </section>
+
+  <!-- ========== STORY — Split layout with overlapping card ========== -->
+  <section class="section section--dark" id="story">
     <div class="container">
-      <div class="page-hero__content" data-animate="fade-up">
-        <div class="gold-line" data-animate></div>
-        <h1>3XI Hakkında</h1>
-        <p class="page-hero__subtitle">30 yılı aşkın süredir finans sektöründe birleştirici güç</p>
+      <div class="story" data-animate="fade-up">
+        <!-- Image side -->
+        <div class="story__media">
+          <img src="assets/images/photos/team2.jpg" alt="Het TRIPLE i team" draggable="false">
+          <!-- Overlay stats card -->
+          <div class="story__overlay">
+            <div class="story__overlay-stat">
+              <strong>30</strong>
+              <span>Yıl</span>
+            </div>
+            <div class="story__overlay-stat">
+              <strong>33</strong>
+              <span>Marka</span>
+            </div>
+            <div class="story__overlay-stat">
+              <strong>15+</strong>
+              <span>Yıl Kıdem</span>
+            </div>
+          </div>
+        </div>
+        <!-- Content side -->
+        <div class="story__content">
+          <span class="story__label">HİKAYEMİZ</span>
+          <div class="story__accent"></div>
+          <h2>Herengracht'tan Almere'ye</h2>
+          <p>TRIPLE i, borsaya kote yayıncılardaki deneyimini yanında getiren Danny Chengadu tarafından 1995'te kuruldu. Şirket, Amsterdam'daki Herengracht 136 adresindeki karakteristik bir binadan başladı.</p>
+          <p>Ortak tutku, cesaret, vizyon ve süreklilikle Hollanda'nın en önemli bağımsız finansal bilgi sağlayıcılarından biri haline geldi. Bugün De Steiger 24, Almere'den 33 marka ve 3 kümeyle faaliyet gösteriyoruz.</p>
+          <a href="#timeline" class="story__btn">
+            Tarihçemiz
+            <svg width="14" height="12" viewBox="0 0 13 12" fill="none"><path d="M12.53 6.53a.75.75 0 0 0 0-1.06L7.757.697a.75.75 0 1 0-1.06 1.06L10.939 6l-4.242 4.243a.75.75 0 0 0 1.06 1.06zM0 6v.75h12v-1.5H0z" fill="currentColor"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== STORY ========== -->
-  <section class="section section--light" id="story">
+  <!-- ========== STATS BAR ========== -->
+  <section class="section section--charcoal stats-section" id="stats">
     <div class="container">
-      <div class="story__images" data-animate="fade-up" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-2xl);">
-        <div style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
-          <img src="assets/images/photos/gebouw-met-logo.jpg" alt="TRIPLE i kantoor — De Steiger 24, Almere" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      <div class="stats-bar" data-animate="fade-up">
+        <div class="stats-bar__item">
+          <span class="stats-bar__number">68.000</span>
+          <span class="stats-bar__label">Yatırımcı</span>
         </div>
-        <div style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
-          <img src="assets/images/photos/team2.jpg" alt="Het TRIPLE i team" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <div class="stats-bar__divider"></div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__number">24.500</span>
+          <span class="stats-bar__label">Danışman</span>
+        </div>
+        <div class="stats-bar__divider"></div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__number">33</span>
+          <span class="stats-bar__label">Marka</span>
+        </div>
+        <div class="stats-bar__divider"></div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__number">3</span>
+          <span class="stats-bar__label">Küme</span>
         </div>
       </div>
-      <div class="story__grid">
-        <div class="story__text" data-animate="fade-up">
-          <div class="gold-line" data-animate></div>
-          <h2>Herengracht'tan Almere'ye — Hikayemiz</h2>
-          <p>TRIPLE i, borsaya kote yayıncılardaki deneyimini yanında getiren Danny Chengadu tarafından kuruldu. Şirket, Amsterdam'daki Herengracht 136 adresindeki karakteristik bir binadan başladı. Ortak tutku, cesaret, vizyon ve süreklilikle Hollanda'nın en önemli bağımsız finansal bilgi sağlayıcılarından biri haline geldi.</p>
-          <p>Yönetim ekibimiz, TRIPLE i'de ortalama on beş yıldan fazla çalışan sadık çalışanlardan oluşuyor. Anton Nota, Linda Chengadu, Tim Chengadu ve Ferry Roersma — birlikte organizasyonumuzun temelini oluşturuyorlar. Deneyimimizi ve güvenilirliğimizi gözden kaçırmadan, bilinçli olarak gençleşmeye ve yeni nesillere ulaşmaya yatırım yapıyoruz.</p>
+    </div>
+  </section>
+
+  <!-- ========== TEAM — Neumorphic Profile Cards ========== -->
+  <section class="section section--dark team-section" id="team">
+    <!-- Animated grid background -->
+    <div class="team-section__grid-bg" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="team-intro" data-animate="fade-up">
+        <div class="gold-line" data-animate style="margin: 0 auto var(--space-lg);"></div>
+        <h2 class="text-center">Yönetim Ekibimiz</h2>
+        <p class="text-center team-intro__sub">Ortalama 15+ yıllık kıdemle TRIPLE i'nin temelini oluşturuyorlar</p>
+      </div>
+
+      <div class="team-grid" data-animate="fade-up">
+        <!-- Danny Chengadu — Founder -->
+        <div class="pcard pcard--founder">
+          <div class="pcard__status pcard__status--online">
+            <span class="pcard__status-ping"></span>
+          </div>
+          <div class="pcard__badge" title="Kurucu">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="pcard__photo">
+            <div class="pcard__photo-ring">
+              <div class="pcard__photo-inner">
+                <span>DC</span>
+              </div>
+            </div>
+            <div class="pcard__photo-glow"></div>
+          </div>
+          <div class="pcard__info">
+            <h3 class="pcard__name">Danny Chengadu</h3>
+            <p class="pcard__role">Kurucu &amp; CEO</p>
+          </div>
+          <div class="pcard__tags">
+            <span class="pcard__tag pcard__tag--premium">Kurucu</span>
+          </div>
+          <div class="pcard__actions">
+            <a href="mailto:info@3xi.nl" class="pcard__btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+          <div class="pcard__border"></div>
         </div>
-        <div class="story__stats" data-stagger>
-          <div class="story__stat-box" data-animate="scale-in">
-            <div class="stat__number" data-count="30">0</div>
-            <div class="stat__label">Yıllık Deneyim</div>
+
+        <!-- Ferry Roersma -->
+        <div class="pcard">
+          <div class="pcard__status pcard__status--online">
+            <span class="pcard__status-ping"></span>
           </div>
-          <div class="story__stat-box" data-animate="scale-in">
-            <div class="stat__number" data-count="300">0</div>
-            <div class="stat__label">Ortak</div>
+          <div class="pcard__photo">
+            <div class="pcard__photo-ring">
+              <div class="pcard__photo-inner">
+                <span>FR</span>
+              </div>
+            </div>
+            <div class="pcard__photo-glow"></div>
           </div>
-          <div class="story__stat-box" data-animate="scale-in">
-            <div class="stat__number" data-count="68.000">0</div>
-            <div class="stat__label">Yatırımcı</div>
+          <div class="pcard__info">
+            <h3 class="pcard__name">Ferry Roersma</h3>
+            <p class="pcard__role">Genel Müdür</p>
           </div>
-          <div class="story__stat-box" data-animate="scale-in">
-            <div class="stat__number">15+</div>
-            <div class="stat__label">Yıl Ort. Kıdem</div>
+          <div class="pcard__actions">
+            <a href="mailto:F.Roersma@3xi.nl" class="pcard__btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+          <div class="pcard__border"></div>
+        </div>
+
+        <!-- Tim Chengadu -->
+        <div class="pcard">
+          <div class="pcard__status pcard__status--online">
+            <span class="pcard__status-ping"></span>
+          </div>
+          <div class="pcard__photo">
+            <div class="pcard__photo-ring">
+              <div class="pcard__photo-inner">
+                <span>TC</span>
+              </div>
+            </div>
+            <div class="pcard__photo-glow"></div>
+          </div>
+          <div class="pcard__info">
+            <h3 class="pcard__name">Tim Chengadu</h3>
+            <p class="pcard__role">İş Geliştirme Direktörü</p>
+          </div>
+          <div class="pcard__actions">
+            <a href="mailto:T.Chengadu@3xi.nl" class="pcard__btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+          <div class="pcard__border"></div>
+        </div>
+
+        <!-- Anton Nota -->
+        <div class="pcard">
+          <div class="pcard__status pcard__status--online">
+            <span class="pcard__status-ping"></span>
+          </div>
+          <div class="pcard__photo">
+            <div class="pcard__photo-ring">
+              <div class="pcard__photo-inner">
+                <span>AN</span>
+              </div>
+            </div>
+            <div class="pcard__photo-glow"></div>
+          </div>
+          <div class="pcard__info">
+            <h3 class="pcard__name">Anton Nota</h3>
+            <p class="pcard__role">Satış</p>
+          </div>
+          <div class="pcard__actions">
+            <a href="mailto:info@3xi.nl" class="pcard__btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+          <div class="pcard__border"></div>
+        </div>
+
+        <!-- Linda Chengadu -->
+        <div class="pcard">
+          <div class="pcard__status pcard__status--online">
+            <span class="pcard__status-ping"></span>
+          </div>
+          <div class="pcard__photo">
+            <div class="pcard__photo-ring">
+              <div class="pcard__photo-inner">
+                <span>LC</span>
+              </div>
+            </div>
+            <div class="pcard__photo-glow"></div>
+          </div>
+          <div class="pcard__info">
+            <h3 class="pcard__name">Linda Chengadu</h3>
+            <p class="pcard__role">Yayın Yönetmeni</p>
+          </div>
+          <div class="pcard__actions">
+            <a href="mailto:info@3xi.nl" class="pcard__btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+          <div class="pcard__border"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== VALUES — Liquid Glass Score Cards ========== -->
+  <section class="section section--charcoal" id="values">
+    <!-- SVG Glass Filter -->
+    <svg class="vcard-filter-svg" aria-hidden="true">
+      <defs>
+        <filter id="glass-filter" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.02 0.02" numOctaves="1" seed="1" result="turbulence"/>
+          <feGaussianBlur in="turbulence" stdDeviation="2" result="blurredNoise"/>
+          <feDisplacementMap in="SourceGraphic" in2="blurredNoise" scale="120" xChannelSelector="R" yChannelSelector="B" result="displaced"/>
+          <feGaussianBlur in="displaced" stdDeviation="4" result="finalBlur"/>
+          <feComposite in="finalBlur" in2="finalBlur" operator="over"/>
+        </filter>
+      </defs>
+    </svg>
+
+    <div class="container">
+      <div class="values-header" data-animate="fade-up">
+        <h2 class="text-center">Temel Değerlerimiz</h2>
+        <p class="text-center values-header__sub">Davranış kurallarımızda yer alan dört temel değerimiz</p>
+      </div>
+
+      <div class="vcards" data-animate="fade-up">
+        <!-- Saygı -->
+        <div class="vcard">
+          <div class="vcard__glass"></div>
+          <div class="vcard__inner">
+            <div class="vcard__header">
+              <h3 class="vcard__title">Saygı</h3>
+              <span class="vcard__badge vcard__badge--strong">Temel</span>
+            </div>
+            <div class="vcard__gauge">
+              <svg class="vcard__svg" viewBox="0 0 100 50" aria-hidden="true">
+                <defs>
+                  <linearGradient id="gauge-green-1" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="hsl(142, 71%, 80%)"/>
+                    <stop offset="50%" stop-color="hsl(142, 71%, 60%)"/>
+                    <stop offset="100%" stop-color="hsl(142, 71%, 40%)"/>
+                  </linearGradient>
+                </defs>
+                <g fill="none" stroke-width="10" transform="translate(50, 50.5)">
+                  <circle class="vcard__gauge-bg" r="45"/>
+                  <circle class="vcard__gauge-fill" stroke="url(#gauge-green-1)" r="45" data-score="92"/>
+                </g>
+              </svg>
+              <div class="vcard__score">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </div>
+            </div>
+            <p class="vcard__desc">Tüm paydaşlarımıza kendimize davranılmasını istediğimiz şekilde davranırız; bireysel ve kültürel farklılıklara dikkat ederek.</p>
+          </div>
+        </div>
+
+        <!-- Kalite -->
+        <div class="vcard">
+          <div class="vcard__glass"></div>
+          <div class="vcard__inner">
+            <div class="vcard__header">
+              <h3 class="vcard__title">Kalite</h3>
+              <span class="vcard__badge vcard__badge--strong">Temel</span>
+            </div>
+            <div class="vcard__gauge">
+              <svg class="vcard__svg" viewBox="0 0 100 50" aria-hidden="true">
+                <defs>
+                  <linearGradient id="gauge-green-2" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="hsl(142, 71%, 80%)"/>
+                    <stop offset="50%" stop-color="hsl(142, 71%, 60%)"/>
+                    <stop offset="100%" stop-color="hsl(142, 71%, 40%)"/>
+                  </linearGradient>
+                </defs>
+                <g fill="none" stroke-width="10" transform="translate(50, 50.5)">
+                  <circle class="vcard__gauge-bg" r="45"/>
+                  <circle class="vcard__gauge-fill" stroke="url(#gauge-green-2)" r="45" data-score="88"/>
+                </g>
+              </svg>
+              <div class="vcard__score">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+            </div>
+            <p class="vcard__desc">Müşterilerimize iyi hizmet vermek için geliştirilmiş ürün ve hizmetler sunuyoruz. Kalite, erişilebilirlik ve güvenilirlik merkezimizdir.</p>
+          </div>
+        </div>
+
+        <!-- Şeffaflık -->
+        <div class="vcard">
+          <div class="vcard__glass"></div>
+          <div class="vcard__inner">
+            <div class="vcard__header">
+              <h3 class="vcard__title">Şeffaflık</h3>
+              <span class="vcard__badge vcard__badge--strong">Temel</span>
+            </div>
+            <div class="vcard__gauge">
+              <svg class="vcard__svg" viewBox="0 0 100 50" aria-hidden="true">
+                <defs>
+                  <linearGradient id="gauge-green-3" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="hsl(142, 71%, 80%)"/>
+                    <stop offset="50%" stop-color="hsl(142, 71%, 60%)"/>
+                    <stop offset="100%" stop-color="hsl(142, 71%, 40%)"/>
+                  </linearGradient>
+                </defs>
+                <g fill="none" stroke-width="10" transform="translate(50, 50.5)">
+                  <circle class="vcard__gauge-bg" r="45"/>
+                  <circle class="vcard__gauge-fill" stroke="url(#gauge-green-3)" r="45" data-score="95"/>
+                </g>
+              </svg>
+              <div class="vcard__score">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+            </div>
+            <p class="vcard__desc">Ürünlerimiz, performansımız ve finansal sonuçlarımız hakkında dürüst, doğru ve zamanında bilgi veririz.</p>
+          </div>
+        </div>
+
+        <!-- Güven -->
+        <div class="vcard">
+          <div class="vcard__glass"></div>
+          <div class="vcard__inner">
+            <div class="vcard__header">
+              <h3 class="vcard__title">Güven</h3>
+              <span class="vcard__badge vcard__badge--strong">Temel</span>
+            </div>
+            <div class="vcard__gauge">
+              <svg class="vcard__svg" viewBox="0 0 100 50" aria-hidden="true">
+                <defs>
+                  <linearGradient id="gauge-green-4" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="hsl(142, 71%, 80%)"/>
+                    <stop offset="50%" stop-color="hsl(142, 71%, 60%)"/>
+                    <stop offset="100%" stop-color="hsl(142, 71%, 40%)"/>
+                  </linearGradient>
+                </defs>
+                <g fill="none" stroke-width="10" transform="translate(50, 50.5)">
+                  <circle class="vcard__gauge-bg" r="45"/>
+                  <circle class="vcard__gauge-fill" stroke="url(#gauge-green-4)" r="45" data-score="90"/>
+                </g>
+              </svg>
+              <div class="vcard__score">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+            </div>
+            <p class="vcard__desc">30 yıllık itibar ve güvenilirlik. Paydaşlarımızla uzun vadeli, karşılıklı güvene dayalı ilişkiler kuruyoruz.</p>
           </div>
         </div>
       </div>
@@ -110,95 +450,83 @@
     <div class="container">
       <div class="gold-line" data-animate style="margin: 0 auto var(--space-lg);"></div>
       <h2 class="text-center" data-animate="fade-up">Tarihçemiz</h2>
-      <div class="timeline">
-        <div class="timeline__track" data-stagger>
-          <div class="timeline__item" data-animate="fade-up">
-            <div class="timeline__dot"></div>
-            <div class="timeline__year">1995</div>
-            <div class="timeline__desc">Danny Chengadu tarafından Herengracht, Amsterdam'da kuruldu</div>
-          </div>
-          <div class="timeline__item" data-animate="fade-up">
-            <div class="timeline__dot"></div>
-            <div class="timeline__year">2000</div>
-            <div class="timeline__desc">İlk finansal borsa etkinliği düzenlendi</div>
-          </div>
-          <div class="timeline__item" data-animate="fade-up">
-            <div class="timeline__dot"></div>
-            <div class="timeline__year">2005</div>
-            <div class="timeline__desc">Dijital medya ve online platformlara genişleme</div>
-          </div>
-          <div class="timeline__item" data-animate="fade-up">
-            <div class="timeline__dot"></div>
-            <div class="timeline__year">2010</div>
-            <div class="timeline__desc">BeleggersFair, Hollanda'nın en büyük yatırımcı etkinliği olarak başlatıldı</div>
-          </div>
-          <div class="timeline__item" data-animate="fade-up">
-            <div class="timeline__dot"></div>
-            <div class="timeline__year">2018</div>
-            <div class="timeline__desc">BeursInside: Kripto kongresi ve ödüller başlatıldı</div>
-          </div>
-          <div class="timeline__item" data-animate="fade-up">
-            <div class="timeline__dot"></div>
-            <div class="timeline__year">2024</div>
-            <div class="timeline__desc">Portfoliofacts: profesyoneller için veri odaklı platform</div>
+      <p class="text-center" data-animate="fade-up" style="color: var(--color-gray-mid); max-width: 500px; margin: var(--space-md) auto var(--space-2xl);">Öncüden yerleşik isme — 30 yıllık yolculuk</p>
+
+      <div class="timeline-v" data-animate="fade-up">
+        <div class="timeline-v__item">
+          <div class="timeline-v__dot"></div>
+          <div class="timeline-v__year">1995</div>
+          <div class="timeline-v__card">
+            <h3>Kuruluş</h3>
+            <p>Danny Chengadu tarafından Herengracht 136, Amsterdam'da kuruldu. Borsaya kote yayıncılardaki deneyimle yola çıkıldı.</p>
           </div>
         </div>
-        <div data-animate="fade-up" style="margin-top: var(--space-2xl);">
-          <img src="assets/images/photos/2.jpg" alt="HypoVak event — toonaangevend hypotheek- en woningmarkt event" style="width: 100%; max-width: 800px; margin: 0 auto; display: block; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+        <div class="timeline-v__item">
+          <div class="timeline-v__dot"></div>
+          <div class="timeline-v__year">1996</div>
+          <div class="timeline-v__card">
+            <h3>İlk Ekip</h3>
+            <p>Anton Nota ekibe katıldı. Şirketin temel kadrosu oluşmaya başladı.</p>
+          </div>
         </div>
+        <div class="timeline-v__item">
+          <div class="timeline-v__dot"></div>
+          <div class="timeline-v__year">2000</div>
+          <div class="timeline-v__card">
+            <h3>Weesp'e Taşınma</h3>
+            <p>Şirket merkezi Amsterdam'dan Weesp'e taşındı. Büyüyen ekip ve operasyonlar için yeni ofis.</p>
+          </div>
+        </div>
+        <div class="timeline-v__item">
+          <div class="timeline-v__dot"></div>
+          <div class="timeline-v__year">2011</div>
+          <div class="timeline-v__card">
+            <h3>Hissedar Genişlemesi</h3>
+            <p>Ferry Roersma ve Linda Chengadu hissedar oldu. Uzun yıllık katkılarıyla yönetim ekibi güçlendirildi.</p>
+          </div>
+        </div>
+        <div class="timeline-v__item">
+          <div class="timeline-v__dot"></div>
+          <div class="timeline-v__year">2025</div>
+          <div class="timeline-v__card">
+            <h3>33 Marka</h3>
+            <p>BeursInside, VVP (82 yıllık meslek dergisi) ve Crypto Congres satın alındı. Portföy 33 markaya ulaştı.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event photo -->
+      <div class="timeline-photo" data-animate="fade-up">
+        <img src="assets/images/photos/2.jpg" alt="HypoVak — toonaangevend hypotheek- en woningmarkt event" loading="lazy">
       </div>
     </div>
   </section>
 
   <!-- ========== ORGANOGRAM ========== -->
-  <section class="section section--light" id="organogram">
+  <section class="section section--charcoal" id="organogram">
     <div class="container">
       <div class="gold-line" data-animate style="margin: 0 auto var(--space-lg);"></div>
       <h2 class="text-center" data-animate="fade-up">Organizasyonumuz</h2>
-      <p class="text-center" data-animate="fade-up" style="color: var(--color-gray-mid); max-width: 600px; margin: var(--space-md) auto var(--space-2xl);">TRIPLE i 2025/2026 organizasyon şeması</p>
-      <div data-animate="fade-up" style="max-width: 900px; margin: 0 auto;">
-        <img src="assets/images/infographics/organogram.jpg" alt="Organogram TRIPLE i 2025/2026" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+      <p class="text-center" data-animate="fade-up" style="color: var(--color-gray-mid); max-width: 600px; margin: var(--space-md) auto var(--space-2xl);">İki ana küme, her biri bir İş Geliştirme Direktörü tarafından yönetiliyor</p>
+      <div class="organogram" data-animate="fade-up">
+        <img src="assets/images/infographics/organogram.jpg" alt="Organogram TRIPLE i 2025/2026" loading="lazy">
       </div>
     </div>
   </section>
 
-  <!-- ========== VALUES ========== -->
-  <section class="section section--light" id="values">
+  <!-- ========== VISION ========== -->
+  <section class="section section--dark" id="visie">
     <div class="container">
-      <div class="gold-line" data-animate style="margin: 0 auto var(--space-lg);"></div>
-      <h2 class="text-center" data-animate="fade-up">Temel Değerlerimiz</h2>
-      <div class="values__grid" data-stagger>
-        <div class="value-card" data-animate="scale-in">
-          <span class="value-card__icon">&#x1F6E1;</span>
-          <h3 class="value-card__title">Dürüstlük</h3>
-          <p class="value-card__text">Kalıcı bağımsızlık ve güvenilirlik. Şeffaflık ve dürüstlük, 30 yıllık güvenin temelini oluşturur.</p>
-        </div>
-        <div class="value-card" data-animate="scale-in">
-          <span class="value-card__icon">&#x1F4A1;</span>
-          <h3 class="value-card__title">İnovasyon</h3>
-          <p class="value-card__text">Hızla dijitalleşen bir pazarda öncü ve güncel. Deneyimimizi gözden kaçırmadan yeni teknolojileri benimsiyoruz.</p>
-        </div>
-        <div class="value-card" data-animate="scale-in">
-          <span class="value-card__icon">&#x1F91D;</span>
-          <h3 class="value-card__title">İş Birliği</h3>
-          <p class="value-card__text">300'den fazla ortakla bir finansal ekosistem inşa ediyoruz. Aile ortamı, iddialı hedefler.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== VISIE ========== -->
-  <section class="section section--charcoal" id="visie">
-    <div class="container">
-      <div class="about-teaser" data-animate="fade-up">
-        <div>
+      <div class="vision" data-animate="fade-up">
+        <div class="vision__left">
           <div class="gold-line" data-animate></div>
-          <p class="label">Vizyonumuz</p>
-          <h2 style="color: var(--color-white);">Bugün ve Yarın</h2>
+          <span class="vision__label">VİZYONUMUZ</span>
+          <h2>Bugün ve Yarın</h2>
         </div>
-        <div>
-          <p style="color: var(--color-gray-mid); line-height: 1.8;">Misyonumuz net: tüketicilerin finansal farkındalığını artırmak ve danışmanları işlerinde desteklemek. Hızla dijitalleşen ve düzenlenen bir pazarda kalıcı olarak bağımsız, öncü ve güncel olmak istiyoruz.</p>
-          <p style="color: var(--color-gray-mid); line-height: 1.8;">Hollanda'nın en önemli bağımsız finansal bilgi sağlayıcıları arasındayız. Kalite, erişilebilirlik, güvenilirlik — bunlar bizim değerlerimiz.</p>
+        <div class="vision__right">
+          <p>Misyonumuz net: tüketicilerin finansal farkındalığını artırmak ve danışmanları işlerinde desteklemek. Hızla dijitalleşen ve düzenlenen bir pazarda kalıcı olarak bağımsız, öncü ve güncel olmak istiyoruz.</p>
+          <p>Hollanda'nın en önemli bağımsız finansal bilgi sağlayıcıları arasındayız. Kalite, erişilebilirlik, güvenilirlik — bunlar bizim değerlerimiz.</p>
+          <a href="diensten.html" class="vision__btn">Hizmetlerimiz <span class="btn__arrow">&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -236,7 +564,7 @@
           <a href="contact.html" class="footer__link">İletişim</a>
         </div>
         <div>
-          <h4 class="footer__heading">Platforms</h4>
+          <h4 class="footer__heading">Platformlar</h4>
           <a href="https://www.cashcow.nl" target="_blank" class="footer__link">CashCow</a>
           <a href="https://www.beleggersfair.nl" target="_blank" class="footer__link">Beleggersfair</a>
           <a href="https://www.hypovak.nl" target="_blank" class="footer__link">HypoVak</a>

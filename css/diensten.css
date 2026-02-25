@@ -38,7 +38,7 @@
 }
 
 .service-block:hover .service-block__visual {
-  border-color: rgba(201, 169, 110, 0.2);
+  border-color: rgba(102, 45, 145, 0.2);
   box-shadow: var(--shadow-card);
 }
 

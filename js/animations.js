@@ -15,61 +15,36 @@ function initHeroAnimations() {
   const hero = document.querySelector('.hero');
   if (!hero) return;
 
-  const tl = gsap.timeline({ delay: 0.3 });
-
-  // Gold line
-  const goldLine = hero.querySelector('.gold-line');
-  if (goldLine) {
-    tl.fromTo(goldLine, { width: 0 }, { width: 60, duration: 0.6, ease: 'power2.out' });
+  // Hero entrance is handled by CSS keyframes (hero__fade classes).
+  // GSAP adds parallax scroll effect on the hero content.
+  const center = hero.querySelector('.hero__center-inner');
+  if (center) {
+    gsap.to(center, {
+      y: -60,
+      opacity: 0.3,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: hero,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
   }
 
-  // Label
-  const label = hero.querySelector('.hero__label');
-  if (label) {
-    tl.fromTo(label, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, '-=0.2');
-  }
-
-  // Title - split into words for reveal
-  const title = hero.querySelector('.hero__title');
-  if (title) {
-    const text = title.textContent;
-    const words = text.split(' ');
-    title.innerHTML = words.map(w => `<span class="word" style="display:inline-block;opacity:0;transform:translateY(20px)">${w}</span>`).join(' ');
-    const wordSpans = title.querySelectorAll('.word');
-    tl.to(wordSpans, {
-      opacity: 1, y: 0,
-      stagger: 0.04,
-      duration: 0.5,
-      ease: 'power2.out'
-    }, '-=0.1');
-  }
-
-  // Subtitle
-  const subtitle = hero.querySelector('.hero__subtitle');
-  if (subtitle) {
-    tl.fromTo(subtitle, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.3');
-  }
-
-  // Buttons
-  const buttons = hero.querySelector('.hero__buttons');
-  if (buttons) {
-    tl.fromTo(buttons, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.3');
-  }
-
-  // Stats
-  const stats = hero.querySelectorAll('.stat');
-  if (stats.length) {
-    tl.fromTo(stats,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, stagger: 0.1, duration: 0.5 },
-      '-=0.2'
-    );
-  }
-
-  // Scroll indicator
-  const scroll = hero.querySelector('.hero__scroll');
-  if (scroll) {
-    tl.fromTo(scroll, { opacity: 0 }, { opacity: 1, duration: 0.5 }, '-=0.2');
+  const partners = hero.querySelector('.hero__partners');
+  if (partners) {
+    gsap.to(partners, {
+      y: -30,
+      opacity: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: hero,
+        start: '60% top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
   }
 }
 

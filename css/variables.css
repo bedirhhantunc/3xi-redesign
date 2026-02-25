@@ -1,13 +1,22 @@
+@font-face {
+  font-family: 'The Bold Font';
+  src: url('../assets/fonts/TheBoldFont.woff') format('woff'),
+       url('../assets/fonts/TheBoldFont.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Colors - Primary */
   --color-navy: #0A1628;
   --color-charcoal: #1A1A2E;
   --color-navy-light: #0F1D32;
 
-  /* Colors - Accent */
-  --color-gold: #C9A96E;
-  --color-gold-light: #D4B87A;
-  --color-gold-glow: rgba(201, 169, 110, 0.3);
+  /* Colors - Accent (Purple — TRIPLE i brand) */
+  --color-gold: #9B6BC9;
+  --color-gold-light: #B392DE;
+  --color-gold-glow: rgba(155, 107, 201, 0.3);
 
   /* Colors - Neutral */
   --color-white: #F5F5F7;
@@ -61,7 +70,7 @@
   /* Effects */
   --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.12);
   --shadow-card-hover: 0 16px 48px rgba(0, 0, 0, 0.2);
-  --shadow-gold: 0 0 40px rgba(201, 169, 110, 0.3);
+  --shadow-gold: 0 0 40px rgba(102, 45, 145, 0.3);
   --radius-card: 12px;
   --radius-btn: 8px;
   --radius-full: 50%;
