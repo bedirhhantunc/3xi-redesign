@@ -991,96 +991,245 @@
 }
 
 /* ============================================
-   TIMELINE — Vertical
+   TIMELINE — Aceternity Scroll Progress Style
    ============================================ */
-.timeline-v {
-  position: relative;
-  max-width: 700px;
-  margin: 0 auto;
-  padding-left: 40px;
-}
-
-/* Vertical line */
-.timeline-v::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 7px;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--color-gold), rgba(155, 107, 201, 0.1));
-}
-
-.timeline-v__item {
-  position: relative;
-  padding-bottom: var(--space-2xl);
-}
-
-.timeline-v__item:last-child {
+.tl-section.section {
+  padding-top: 0;
   padding-bottom: 0;
 }
 
-.timeline-v__dot {
-  position: absolute;
-  left: -40px;
-  top: 4px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--color-gold);
-  box-shadow: 0 0 20px var(--color-gold-glow);
-  transform: translateX(calc(-50% + 8px));
-}
-
-.timeline-v__year {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-gold);
-  margin-bottom: var(--space-sm);
-}
-
-.timeline-v__card {
-  padding: var(--space-lg);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-card);
-  transition: border-color 0.3s ease;
-}
-
-.timeline-v__card:hover {
-  border-color: rgba(155, 107, 201, 0.15);
-}
-
-.timeline-v__card h3 {
-  font-family: var(--font-heading);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-white);
-  margin-bottom: var(--space-sm);
-}
-
-.timeline-v__card p {
-  font-size: 14px;
-  color: var(--color-gray-mid);
-  line-height: 1.7;
-  margin-bottom: 0;
-}
-
-/* Event photo under timeline */
-.timeline-photo {
-  margin-top: var(--space-2xl);
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.timeline-photo img {
+.tl {
   width: 100%;
+  font-family: var(--font-body);
+}
+
+/* Header */
+.tl__header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 16px 0;
+}
+
+@media (min-width: 768px) {
+  .tl__header { padding: 80px 32px 0; }
+}
+
+@media (min-width: 1024px) {
+  .tl__header { padding: 80px 40px 0; }
+}
+
+.tl__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.125rem, 3vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--color-white);
+  max-width: 900px;
+}
+
+.tl__sub {
+  color: var(--color-gray-mid);
+  font-size: clamp(14px, 1.5vw, 16px);
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+/* Track — contains all entries + progress line */
+.tl__track {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+/* Entry — flex row */
+.tl__entry {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .tl__entry {
+    padding-top: 160px;
+    gap: 40px;
+  }
+}
+
+/* Left side — sticky year title */
+.tl__left {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  z-index: 40;
+  align-items: center;
+  top: 160px;
+  align-self: flex-start;
+  max-width: 320px;
+}
+
+@media (min-width: 768px) {
+  .tl__left {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tl__left { max-width: 384px; }
+}
+
+/* Dot indicator on the line */
+.tl__dot {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  left: 12px;
+  border-radius: 50%;
+  background: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.tl__dot-inner {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Year — desktop only (large, sticky) */
+.tl__year {
+  display: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.18);
+}
+
+@media (min-width: 768px) {
+  .tl__year {
+    display: block;
+    padding-left: 80px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+}
+
+/* Year — mobile only */
+.tl__year-mobile {
   display: block;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: left;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.18);
+}
+
+@media (min-width: 768px) {
+  .tl__year-mobile { display: none; }
+}
+
+/* Right side — scrolling content */
+.tl__right {
+  position: relative;
+  padding-left: 80px;
+  padding-right: 16px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .tl__right {
+    padding-left: 16px;
+    padding-right: 0;
+  }
+}
+
+/* Content text */
+.tl__text {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: clamp(13px, 1.3vw, 15px);
+  font-weight: 400;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+/* Image grid — 2 columns */
+.tl__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.tl__grid img {
+  border-radius: 12px;
+  object-fit: cover;
+  width: 100%;
+  height: 80px;
+  box-shadow:
+    0 0 24px rgba(0, 0, 0, 0.25),
+    0 1px 1px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 0 4px rgba(0, 0, 0, 0.2),
+    0 16px 68px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@media (min-width: 768px) {
+  .tl__grid img { height: 176px; }
+}
+
+@media (min-width: 1024px) {
+  .tl__grid img { height: 240px; }
+}
+
+/* Checklist items */
+.tl__checks {
+  margin-bottom: 32px;
+}
+
+.tl__check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(13px, 1.3vw, 15px);
+  line-height: 1.6;
+  padding: 3px 0;
+}
+
+/* The vertical line track (background) */
+.tl__line {
+  position: absolute;
+  left: 32px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 10%,
+    rgba(255, 255, 255, 0.08) 90%,
+    transparent 99%
+  );
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/* Animated progress fill (GSAP-driven) */
+.tl__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(to top, var(--color-gold), var(--color-gold-light), transparent);
+  height: 0;
+  opacity: 0;
 }
 
 /* ============================================

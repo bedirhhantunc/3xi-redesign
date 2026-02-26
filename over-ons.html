@@ -445,59 +445,95 @@
     </div>
   </section>
 
-  <!-- ========== TIMELINE ========== -->
-  <section class="section section--dark" id="timeline">
-    <div class="container">
-      <div class="gold-line" data-animate style="margin: 0 auto var(--space-lg);"></div>
-      <h2 class="text-center" data-animate="fade-up">Tarihçemiz</h2>
-      <p class="text-center" data-animate="fade-up" style="color: var(--color-gray-mid); max-width: 500px; margin: var(--space-md) auto var(--space-2xl);">Öncüden yerleşik isme — 30 yıllık yolculuk</p>
-
-      <div class="timeline-v" data-animate="fade-up">
-        <div class="timeline-v__item">
-          <div class="timeline-v__dot"></div>
-          <div class="timeline-v__year">1995</div>
-          <div class="timeline-v__card">
-            <h3>Kuruluş</h3>
-            <p>Danny Chengadu tarafından Herengracht 136, Amsterdam'da kuruldu. Borsaya kote yayıncılardaki deneyimle yola çıkıldı.</p>
-          </div>
-        </div>
-        <div class="timeline-v__item">
-          <div class="timeline-v__dot"></div>
-          <div class="timeline-v__year">1996</div>
-          <div class="timeline-v__card">
-            <h3>İlk Ekip</h3>
-            <p>Anton Nota ekibe katıldı. Şirketin temel kadrosu oluşmaya başladı.</p>
-          </div>
-        </div>
-        <div class="timeline-v__item">
-          <div class="timeline-v__dot"></div>
-          <div class="timeline-v__year">2000</div>
-          <div class="timeline-v__card">
-            <h3>Weesp'e Taşınma</h3>
-            <p>Şirket merkezi Amsterdam'dan Weesp'e taşındı. Büyüyen ekip ve operasyonlar için yeni ofis.</p>
-          </div>
-        </div>
-        <div class="timeline-v__item">
-          <div class="timeline-v__dot"></div>
-          <div class="timeline-v__year">2011</div>
-          <div class="timeline-v__card">
-            <h3>Hissedar Genişlemesi</h3>
-            <p>Ferry Roersma ve Linda Chengadu hissedar oldu. Uzun yıllık katkılarıyla yönetim ekibi güçlendirildi.</p>
-          </div>
-        </div>
-        <div class="timeline-v__item">
-          <div class="timeline-v__dot"></div>
-          <div class="timeline-v__year">2025</div>
-          <div class="timeline-v__card">
-            <h3>33 Marka</h3>
-            <p>BeursInside, VVP (82 yıllık meslek dergisi) ve Crypto Congres satın alındı. Portföy 33 markaya ulaştı.</p>
-          </div>
-        </div>
+  <!-- ========== TIMELINE — Aceternity Scroll Progress ========== -->
+  <section class="section section--dark tl-section" id="timeline">
+    <div class="tl">
+      <!-- Header -->
+      <div class="tl__header">
+        <h2 class="tl__heading">Tarihçemiz</h2>
+        <p class="tl__sub">Öncüden yerleşik isme — 30 yıllık yolculuk</p>
       </div>
 
-      <!-- Event photo -->
-      <div class="timeline-photo" data-animate="fade-up">
-        <img src="assets/images/photos/2.jpg" alt="HypoVak — toonaangevend hypotheek- en woningmarkt event" loading="lazy">
+      <!-- Track -->
+      <div class="tl__track">
+        <!-- 1995: Kuruluş -->
+        <div class="tl__entry">
+          <div class="tl__left">
+            <div class="tl__dot"><div class="tl__dot-inner"></div></div>
+            <h3 class="tl__year">1995</h3>
+          </div>
+          <div class="tl__right">
+            <h3 class="tl__year-mobile">1995</h3>
+            <p class="tl__text">Danny Chengadu, borsaya kote yayıncılardaki deneyimini yanına alarak TRIPLE i'yi kurdu. Şirket, Amsterdam'ın tarihi Herengracht 136 adresindeki karakteristik bir binadan faaliyete başladı.</p>
+            <div class="tl__grid">
+              <img src="assets/images/photos/gebouw-met-logo.jpg" alt="TRIPLE i ofis binası" loading="lazy">
+              <img src="assets/images/photos/1.jpg" alt="Kuruluş dönemi" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- 2000: Weesp'e Taşınma -->
+        <div class="tl__entry">
+          <div class="tl__left">
+            <div class="tl__dot"><div class="tl__dot-inner"></div></div>
+            <h3 class="tl__year">2000</h3>
+          </div>
+          <div class="tl__right">
+            <h3 class="tl__year-mobile">2000</h3>
+            <p class="tl__text">Büyüyen ekip ve genişleyen operasyonlarla şirket merkezi Amsterdam'dan Weesp'e taşındı. Anton Nota'nın 1996'daki katılımıyla oluşan temel kadro, şirketin büyüme temellerini attı.</p>
+            <p class="tl__text">Yeni ofis, artan müşteri portföyü ve genişleyen marka ailesi için gerekli altyapıyı sağladı.</p>
+            <div class="tl__grid">
+              <img src="assets/images/photos/2.jpg" alt="HypoVak etkinlik" loading="lazy">
+              <img src="assets/images/photos/team2.jpg" alt="TRIPLE i ekibi" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- 2011: Hissedar Genişlemesi -->
+        <div class="tl__entry">
+          <div class="tl__left">
+            <div class="tl__dot"><div class="tl__dot-inner"></div></div>
+            <h3 class="tl__year">2011</h3>
+          </div>
+          <div class="tl__right">
+            <h3 class="tl__year-mobile">2011</h3>
+            <p class="tl__text">Ferry Roersma ve Linda Chengadu, uzun yıllık katkılarının ardından hissedar oldu. Yönetim ekibi güçlendirildi ve şirketin stratejik yönelimi pekiştirildi.</p>
+            <div class="tl__grid">
+              <img src="assets/images/photos/2-1.jpg" alt="Etkinlik görünümü" loading="lazy">
+              <img src="assets/images/infographics/mediatype.jpg" alt="Mediatype yapısı" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025: 33 Marka -->
+        <div class="tl__entry">
+          <div class="tl__left">
+            <div class="tl__dot"><div class="tl__dot-inner"></div></div>
+            <h3 class="tl__year">2025</h3>
+          </div>
+          <div class="tl__right">
+            <h3 class="tl__year-mobile">2025</h3>
+            <p class="tl__text">Portföy 33 markaya ulaştı. De Steiger 24, Almere'den 3 küme halinde faaliyet gösteriyoruz.</p>
+            <div class="tl__checks">
+              <div class="tl__check">✅ BeursInside — canlı borsa platformu</div>
+              <div class="tl__check">✅ VVP — 82 yıllık meslek dergisi</div>
+              <div class="tl__check">✅ Crypto Congres — kripto etkinlikleri</div>
+              <div class="tl__check">✅ 68.000+ yatırımcı erişimi</div>
+              <div class="tl__check">✅ 24.500+ finansal danışman ağı</div>
+            </div>
+            <div class="tl__grid">
+              <img src="assets/images/infographics/portfoliofacts.jpg" alt="Portföy verileri" loading="lazy">
+              <img src="assets/images/infographics/organogram.jpg" alt="Organizasyon yapısı" loading="lazy">
+              <img src="assets/images/photos/gebouw-met-logo.jpg" alt="Almere merkez ofis" loading="lazy">
+              <img src="assets/images/photos/2.jpg" alt="HypoVak etkinlik" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Progress Line -->
+        <div class="tl__line">
+          <div class="tl__progress"></div>
+        </div>
       </div>
     </div>
   </section>

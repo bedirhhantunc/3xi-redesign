@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initStatsCounter();
   initGoldLines();
+  initTimelineProgress();
 });
 
 function initHeroAnimations() {
@@ -136,6 +137,45 @@ function initGoldLines() {
         duration: 0.8,
         ease: 'power2.out',
         scrollTrigger: { trigger: line, start: 'top 85%', once: true }
+      }
+    );
+  });
+}
+
+function initTimelineProgress() {
+  const container = document.querySelector('.tl');
+  const track = document.querySelector('.tl__track');
+  const progress = document.querySelector('.tl__progress');
+
+  if (!container || !track || !progress) return;
+
+  const trackHeight = track.offsetHeight;
+
+  // Scroll-driven progress line (replicates framer-motion useScroll)
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: 'top 10%',
+      end: 'bottom 50%',
+      scrub: true,
+    }
+  });
+
+  // Opacity: fade in during first 10% of scroll
+  tl.fromTo(progress, { opacity: 0 }, { opacity: 1, duration: 0.1 }, 0);
+  // Height: grow from 0 to full track height over entire scroll
+  tl.fromTo(progress, { height: 0 }, { height: trackHeight + 'px', duration: 1, ease: 'none' }, 0);
+
+  // Stagger entry reveal
+  gsap.utils.toArray('.tl__entry').forEach(entry => {
+    gsap.fromTo(entry,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: entry, start: 'top 85%', once: true }
       }
     );
   });
