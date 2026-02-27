@@ -3,6 +3,94 @@
    ============================================ */
 
 /* ============================================
+   CONTACT CTA — Two target group cards
+   ============================================ */
+.cta-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.cta-duo__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: var(--radius-card);
+  background: var(--color-navy);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+.cta-duo__card:hover {
+  border-color: rgba(155, 107, 201, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 24px rgba(155, 107, 201, 0.08);
+  transform: translateY(-2px);
+}
+
+.cta-duo__label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-gold);
+  margin-bottom: 12px;
+}
+
+.cta-duo__title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.cta-duo__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.cta-duo__email,
+.cta-duo__phone {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-gray-mid);
+  transition: color 0.2s ease;
+}
+
+.cta-duo__card:hover .cta-duo__email {
+  color: var(--color-white);
+}
+
+.cta-duo__arrow {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  font-size: 20px;
+  color: var(--color-gold);
+  transition: transform 0.3s ease;
+}
+
+.cta-duo__card:hover .cta-duo__arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .cta-duo {
+    grid-template-columns: 1fr;
+  }
+  .cta-duo__title {
+    font-size: 18px;
+  }
+}
+
+/* ============================================
    VIDEO PLAYER — Custom Vimeo player (shadcn adapted)
    ============================================ */
 .vp-list {
