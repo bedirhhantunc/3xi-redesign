@@ -537,84 +537,78 @@
       <h2 class="text-center" data-animate="fade-up">Organizasyonumuz</h2>
       <p class="text-center" data-animate="fade-up" style="color: var(--color-gray-mid); max-width: 600px; margin: var(--space-md) auto var(--space-2xl);">İki ana küme, her biri bir İş Geliştirme Direktörü tarafından yönetiliyor</p>
       <div class="org">
-        <!-- Background glow source -->
-        <div class="org__glow" aria-hidden="true"></div>
-
-        <!-- Tier 1: CEO -->
-        <div class="org__tier">
-          <div class="org__card org__card--ceo">
-            <div class="org__card-glow"></div>
-            <div class="org__card-ring"></div>
-            <div class="org__card-body">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <span class="org__role">Managing Director</span>
-            </div>
+        <!-- Level 0 — CEO -->
+        <div class="org__card org__card--ceo">
+          <div class="org__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="org__info">
+            <span class="org__tag">Oprichter &amp; CEO</span>
+            <span class="org__name">Managing Director</span>
           </div>
         </div>
 
-        <div class="org__wire"><span></span></div>
+        <div class="org__stem"></div>
 
-        <!-- Tier 2: Staff -->
-        <div class="org__tier org__tier--row">
-          <div class="org__card org__card--staff">
-            <span class="org__label">Danışman</span>
-            <span class="org__role">Strategisch adviseur</span>
+        <!-- Level 1 — Staff -->
+        <div class="org__row">
+          <div class="org__card">
+            <span class="org__tag">Advies</span>
+            <span class="org__name">Strategisch adviseur</span>
           </div>
-          <div class="org__card org__card--staff">
-            <span class="org__label">Finans</span>
-            <span class="org__role">Controller</span>
+          <div class="org__card">
+            <span class="org__tag">Financiën</span>
+            <span class="org__name">Controller</span>
           </div>
-          <div class="org__card org__card--staff">
-            <span class="org__label">Finans</span>
-            <span class="org__role">Administrateur</span>
+          <div class="org__card">
+            <span class="org__tag">Financiën</span>
+            <span class="org__name">Administrateur</span>
           </div>
         </div>
 
-        <div class="org__wire"><span></span></div>
+        <div class="org__stem"></div>
 
-        <!-- Tier 3: Fork into two branches -->
-        <div class="org__fork">
-          <!-- Investment -->
+        <!-- Level 2 — Two divisions -->
+        <div class="org__branches">
           <div class="org__branch">
-            <div class="org__card org__card--bd">
-              <span class="org__label">Investment</span>
-              <span class="org__role">Business Director</span>
+            <div class="org__card org__card--dir">
+              <span class="org__tag">Investment</span>
+              <span class="org__name">Business Director</span>
             </div>
-            <div class="org__wire org__wire--sm"><span></span></div>
-            <div class="org__tier org__tier--row">
+            <div class="org__stem org__stem--sm"></div>
+            <div class="org__row org__row--2">
               <div class="org__card org__card--leaf">Hoofd redactie</div>
               <div class="org__card org__card--leaf">Sales team</div>
             </div>
           </div>
-          <!-- Insurance -->
           <div class="org__branch">
-            <div class="org__card org__card--bd">
-              <span class="org__label">Insurance</span>
-              <span class="org__role">Business Director</span>
+            <div class="org__card org__card--dir">
+              <span class="org__tag">Insurance</span>
+              <span class="org__name">Business Director</span>
             </div>
-            <div class="org__wire org__wire--sm"><span></span></div>
-            <div class="org__tier org__tier--row">
+            <div class="org__stem org__stem--sm"></div>
+            <div class="org__row org__row--2">
               <div class="org__card org__card--leaf">Hoofd redactie</div>
               <div class="org__card org__card--leaf">Sales team</div>
             </div>
           </div>
         </div>
 
-        <div class="org__wire"><span></span></div>
+        <div class="org__stem"></div>
 
-        <!-- Tier 4: Support -->
-        <div class="org__tier org__tier--row org__tier--support">
+        <!-- Level 3 — Support -->
+        <div class="org__row">
           <div class="org__card org__card--support">
-            <span class="org__role">Design & vormgeving</span>
-            <span class="org__badge">2</span>
+            <span class="org__name">Design &amp; vormgeving</span>
+            <span class="org__count">2</span>
           </div>
           <div class="org__card org__card--support">
-            <span class="org__role">Eventorganisatie & marketing</span>
-            <span class="org__badge">4</span>
+            <span class="org__name">Event &amp; marketing</span>
+            <span class="org__count">4</span>
           </div>
           <div class="org__card org__card--support">
-            <span class="org__role">Eindredactie & socials</span>
-            <span class="org__badge">4</span>
+            <span class="org__name">Eindredactie &amp; socials</span>
+            <span class="org__count">4</span>
           </div>
         </div>
       </div>

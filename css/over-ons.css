@@ -1235,375 +1235,308 @@
 /* ============================================
    ORGANOGRAM — Premium Constellation Chart
    ============================================ */
+/* ============================================
+   ORGANOGRAM — Clean Professional Tree
+   ============================================ */
 .org {
-  position: relative;
-  max-width: 920px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 16px;
+  padding: var(--space-xl) var(--space-md);
 }
 
-/* Radial glow — light source from CEO */
-.org__glow {
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(155, 107, 201, 0.07) 0%, rgba(155, 107, 201, 0.02) 40%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
+/* ---- Vertical Stem ---- */
+.org__stem {
+  width: 1px;
+  height: 32px;
+  background: rgba(155, 107, 201, 0.2);
+  flex-shrink: 0;
 }
 
-/* Tier — row of cards */
-.org__tier {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
+.org__stem--sm {
+  height: 22px;
 }
 
-.org__tier--row {
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-/* ==== CARD BASE ==== */
+/* ---- Card Base ---- */
 .org__card {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 14px 22px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 1;
+  padding: 14px 24px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .org__card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(155, 107, 201, 0.3);
-  box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.3),
-    0 0 20px rgba(155, 107, 201, 0.06);
-}
-
-/* ==== CEO CARD — Animated spinning gradient border ==== */
-.org__card--ceo {
-  padding: 0;
-  border: none;
-  background: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.org__card--ceo:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(155, 107, 201, 0.2);
-}
-
-/* Pulsing glow behind CEO */
-.org__card-glow {
-  position: absolute;
-  inset: -24px;
-  border-radius: 36px;
-  background: radial-gradient(circle, rgba(155, 107, 201, 0.18) 0%, transparent 70%);
-  z-index: -1;
-  animation: ceoGlow 3s ease-in-out infinite;
-}
-
-@keyframes ceoGlow {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.08); }
-}
-
-/* Spinning gradient ring */
-.org__card-ring {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.org__card-ring::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 220%;
-  height: 220%;
-  transform: translate(-50%, -50%);
-  background: conic-gradient(
-    from 0deg,
-    var(--color-gold),
-    transparent 70deg,
-    var(--color-gold-light) 180deg,
-    transparent 250deg,
-    var(--color-gold)
-  );
-  animation: ringRotate 6s linear infinite;
-}
-
-@keyframes ringRotate {
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* Inner body — covers the gradient leaving 2px border visible */
-.org__card-body {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 28px 52px;
-  border-radius: 18px;
-  margin: 2px;
-  background: linear-gradient(135deg, rgba(10, 22, 40, 0.97), rgba(26, 26, 46, 0.95));
-}
-
-.org__card-body svg {
-  color: var(--color-gold);
-  filter: drop-shadow(0 0 10px rgba(155, 107, 201, 0.6));
-}
-
-.org__card--ceo .org__role {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-/* ==== BD CARD — Gold gradient border ==== */
-.org__card--bd {
   border-color: rgba(155, 107, 201, 0.25);
-  background: linear-gradient(135deg, rgba(155, 107, 201, 0.06), rgba(255, 255, 255, 0.015));
-  padding: 18px 30px;
-  gap: 4px;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
 }
 
-.org__card--bd:hover {
-  border-color: rgba(155, 107, 201, 0.45);
-  box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.3),
-    0 0 24px rgba(155, 107, 201, 0.1);
-}
-
-/* ==== Staff card ==== */
-.org__card--staff {
-  gap: 5px;
-  padding: 14px 24px;
-}
-
-/* ==== Leaf / team card ==== */
-.org__card--leaf {
-  font-size: 13px;
-  color: var(--color-gray-mid);
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
-/* ==== Support card ==== */
-.org__card--support {
-  flex-direction: row;
-  gap: 10px;
-  padding: 12px 20px;
-  border-radius: 10px;
-}
-
-/* Label tag */
-.org__label {
+/* Tag label */
+.org__tag {
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--color-gold);
+  margin-bottom: 3px;
 }
 
 /* Role name */
-.org__role {
+.org__name {
   font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 600;
   color: var(--color-white);
+  line-height: 1.3;
 }
 
-/* Count badge */
-.org__badge {
+/* ---- CEO Card ---- */
+.org__card--ceo {
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 36px;
+  border-radius: 14px;
+  border-color: rgba(155, 107, 201, 0.2);
+  background: linear-gradient(135deg, rgba(155, 107, 201, 0.06), rgba(255, 255, 255, 0.03));
+}
+
+.org__card--ceo:hover {
+  border-color: rgba(155, 107, 201, 0.4);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25), 0 0 20px rgba(155, 107, 201, 0.08);
+}
+
+.org__card--ceo .org__name {
+  font-size: 17px;
+}
+
+.org__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(155, 107, 201, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.org__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* ---- Director Card ---- */
+.org__card--dir {
+  border-left: 2px solid var(--color-gold);
+  border-radius: 8px 10px 10px 8px;
+  padding: 14px 22px;
+  align-items: flex-start;
+  text-align: left;
+  background: linear-gradient(135deg, rgba(155, 107, 201, 0.04), rgba(255, 255, 255, 0.02));
+}
+
+.org__card--dir:hover {
+  border-left-color: var(--color-gold-light);
+}
+
+/* ---- Leaf Card (team) ---- */
+.org__card--leaf {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-gray-mid);
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+/* ---- Support Card ---- */
+.org__card--support {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 8px;
+}
+
+.org__card--support .org__name {
+  font-size: 13px;
+}
+
+.org__count {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--color-gold);
-  background: rgba(155, 107, 201, 0.12);
+  background: rgba(155, 107, 201, 0.1);
   border: 1px solid rgba(155, 107, 201, 0.15);
-  padding: 3px 10px;
+  padding: 2px 10px;
   border-radius: 100px;
   flex-shrink: 0;
 }
 
-/* ==== WIRES — Animated connection lines ==== */
-.org__wire {
-  width: 2px;
-  height: 40px;
-  background: linear-gradient(to bottom, rgba(155, 107, 201, 0.18), rgba(255, 255, 255, 0.03));
+/* ---- Row — horizontal group with tree connectors ---- */
+.org__row {
   position: relative;
-  overflow: hidden;
-  z-index: 1;
-  flex-shrink: 0;
-}
-
-.org__wire--sm {
-  height: 24px;
-}
-
-/* Traveling light pulse on wires */
-.org__wire > span {
-  position: absolute;
-  top: -80%;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(to bottom, transparent, var(--color-gold), transparent);
-  border-radius: 2px;
-  animation: wirePulse 3s ease-in-out infinite;
-}
-
-@keyframes wirePulse {
-  0% { top: -50%; opacity: 0; }
-  30% { opacity: 0.8; }
-  70% { opacity: 0.8; }
-  100% { top: 100%; opacity: 0; }
-}
-
-/* Stagger pulse per level */
-.org__tier--row ~ .org__wire > span { animation-delay: 0.4s; }
-.org__fork ~ .org__wire > span { animation-delay: 0.8s; }
-.org__wire--sm > span { animation-delay: 0.6s; }
-
-/* ==== FORK — Branch split ==== */
-.org__fork {
   display: flex;
   justify-content: center;
-  gap: 56px;
-  position: relative;
-  padding-top: 44px;
-  z-index: 1;
+  gap: 14px;
+  padding-top: 28px;
+  width: fit-content;
+}
+
+/* Each card in a row gets equal width */
+.org__row > .org__card {
+  flex: 0 1 180px;
 }
 
 /* Horizontal bar */
-.org__fork::before {
+.org__row::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 2px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(155, 107, 201, 0.2) 20%,
-    rgba(255, 255, 255, 0.06) 50%,
-    rgba(155, 107, 201, 0.2) 80%,
-    transparent
-  );
+  left: 16%;
+  right: 16%;
+  height: 1px;
+  background: rgba(155, 107, 201, 0.2);
 }
 
-/* Horizontal traveling pulse */
-.org__fork::after {
+/* 2-item rows */
+.org__row--2::before {
+  left: 24%;
+  right: 24%;
+}
+
+/* Vertical drop from bar to each card */
+.org__row > .org__card::before {
   content: '';
   position: absolute;
-  top: -1px;
-  left: 20%;
-  width: 40px;
-  height: 4px;
-  border-radius: 4px;
-  background: var(--color-gold);
-  filter: blur(3px);
-  opacity: 0;
-  animation: forkSweep 4s ease-in-out infinite;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 28px;
+  background: rgba(155, 107, 201, 0.2);
 }
 
-@keyframes forkSweep {
-  0% { left: 20%; opacity: 0; }
-  15% { opacity: 0.6; }
-  85% { opacity: 0.6; }
-  100% { left: 80%; opacity: 0; }
+/* ---- Branches — fork into two divisions ---- */
+.org__branches {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding-top: 28px;
+  width: fit-content;
 }
 
-/* Branch cluster */
+/* Horizontal fork bar */
+.org__branches::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  height: 1px;
+  background: rgba(155, 107, 201, 0.2);
+}
+
+/* Each branch */
 .org__branch {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
 }
 
-/* Vertical drop from fork bar to director */
+/* Vertical drop from fork bar to branch */
 .org__branch::before {
   content: '';
-  position: absolute;
-  top: -44px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 44px;
-  background: linear-gradient(to bottom, rgba(155, 107, 201, 0.18), rgba(255, 255, 255, 0.03));
+  display: block;
+  width: 1px;
+  height: 28px;
+  background: rgba(155, 107, 201, 0.2);
+  flex-shrink: 0;
 }
 
-/* ==== RESPONSIVE ==== */
+/* ---- Responsive ---- */
 @media (max-width: 768px) {
   .org {
-    padding: 24px 12px;
+    padding: var(--space-lg) var(--space-sm);
   }
 
-  .org__glow {
-    width: 300px;
-    height: 300px;
-  }
-
-  .org__fork {
+  .org__row,
+  .org__branches {
     flex-direction: column;
-    gap: 16px;
-    padding-top: 0;
     align-items: center;
+    gap: 8px;
+    padding-top: 0;
+    width: 100%;
   }
 
-  .org__fork::before,
-  .org__fork::after {
+  .org__row::before,
+  .org__branches::before {
     display: none;
   }
 
+  .org__row > .org__card::before,
   .org__branch::before {
     display: none;
   }
 
-  .org__tier--row {
-    flex-direction: column;
-    align-items: center;
+  .org__row > .org__card {
+    flex: none;
+    width: 100%;
+    max-width: 280px;
   }
 
-  .org__branch .org__tier--row {
+  /* Keep team cards side by side */
+  .org__row--2 {
     flex-direction: row;
+    gap: 10px;
+    padding-top: 24px;
+    width: fit-content;
   }
 
-  .org__card-body {
-    padding: 20px 32px;
+  .org__row--2::before {
+    display: block;
   }
 
-  .org__tier--support {
-    gap: 8px;
+  .org__row--2 > .org__card::before {
+    display: block;
+    top: -24px;
+    height: 24px;
+  }
+
+  .org__row--2 > .org__card {
+    flex: 0 1 140px;
+    width: auto;
+    max-width: none;
+  }
+
+  .org__card--ceo {
+    padding: 16px 24px;
+  }
+
+  .org__branches {
+    gap: 16px;
+  }
+
+  .org__stem {
+    height: 20px;
+  }
+
+  .org__stem--sm {
+    height: 16px;
   }
 }
 
