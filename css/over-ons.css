@@ -1233,20 +1233,215 @@
 }
 
 /* ============================================
-   ORGANOGRAM
+   ORGANOGRAM — Interactive HTML Chart
    ============================================ */
-.organogram {
+.org {
   max-width: 900px;
   margin: 0 auto;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.organogram img {
-  width: 100%;
-  display: block;
+/* Vertical connector line */
+.org__line {
+  width: 2px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.org__line--short {
+  height: 20px;
+}
+
+/* Level — horizontal row of cards */
+.org__level {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---- Card base ---- */
+.org__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+
+.org__card:hover {
+  border-color: rgba(155, 107, 201, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* CEO card — gold accent */
+.org__card--ceo {
+  background: linear-gradient(135deg, rgba(155, 107, 201, 0.12), rgba(155, 107, 201, 0.04));
+  border-color: rgba(155, 107, 201, 0.3);
+  padding: 20px 40px;
+  gap: 8px;
+}
+
+.org__card--ceo:hover {
+  border-color: rgba(155, 107, 201, 0.5);
+  box-shadow: 0 8px 32px rgba(155, 107, 201, 0.15);
+}
+
+.org__icon {
+  color: var(--color-gold);
+}
+
+.org__card--ceo .org__name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Director card */
+.org__card--director {
+  border-color: rgba(155, 107, 201, 0.2);
+  padding: 16px 28px;
+  gap: 4px;
+}
+
+/* Staff card */
+.org__card--staff {
+  gap: 4px;
+}
+
+/* Team card */
+.org__card--team {
+  font-size: 13px;
+  color: var(--color-gray-mid);
+  padding: 10px 18px;
+}
+
+/* Support card — horizontal layout */
+.org__card--support {
+  flex-direction: row;
+  gap: 10px;
+  padding: 12px 20px;
+}
+
+/* Tag label */
+.org__tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+}
+
+/* Name/title text */
+.org__name {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+/* Count badge */
+.org__count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-gold);
+  background: rgba(155, 107, 201, 0.12);
+  padding: 2px 10px;
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+
+/* ---- Branches — two clusters side by side ---- */
+.org__branches {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  position: relative;
+  padding-top: 32px;
+}
+
+/* Horizontal connector bar across branches */
+.org__branches::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Single cluster (director + teams) */
+.org__cluster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Vertical drop from horizontal bar to director card */
+.org__cluster::before {
+  content: '';
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Teams row */
+.org__teams {
+  display: flex;
+  gap: 10px;
+}
+
+/* Support row */
+.org__level--support {
+  gap: 10px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .org__branches {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  .org__branches::before {
+    display: none;
+  }
+
+  .org__cluster::before {
+    display: none;
+  }
+
+  .org__level--support {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .org__teams {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .org__card--ceo {
+    padding: 16px 28px;
+  }
 }
 
 /* ============================================
