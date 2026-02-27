@@ -1106,7 +1106,7 @@
   display: none;
   font-family: var(--font-heading);
   font-weight: 700;
-  color: var(--color-gold);
+  color: var(--color-white);
 }
 
 @media (min-width: 768px) {
@@ -1125,7 +1125,7 @@
   margin-bottom: 16px;
   text-align: left;
   font-weight: 700;
-  color: var(--color-gold);
+  color: var(--color-white);
 }
 
 @media (min-width: 768px) {
