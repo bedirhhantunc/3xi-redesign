@@ -395,6 +395,220 @@
 }
 
 /* ============================================
+   LAMP HERO — Aceternity LampContainer replica
+   Two conic gradient cones + glow + sharp line
+   ============================================ */
+.lamp {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-navy);
+  min-height: 65vh;
+  width: 100%;
+  z-index: 0;
+  padding-top: 80px;
+}
+
+.lamp__effect {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex: 1;
+  transform: scaleY(1.25) translateY(-180px);
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  z-index: 0;
+}
+
+.lamp__cone {
+  position: absolute;
+  inset: auto;
+  height: 224px;
+  overflow: visible;
+  animation: lampConeExpand 0.8s 0.3s ease-in-out both;
+}
+
+.lamp__cone--left {
+  right: 50%;
+  background: conic-gradient(from 70deg at center top, var(--color-gold), transparent, transparent);
+}
+
+.lamp__cone--right {
+  left: 50%;
+  background: conic-gradient(from 290deg at center top, transparent, transparent, var(--color-gold));
+}
+
+.lamp__cone-mask-bottom {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 160px;
+  z-index: 20;
+  background: var(--color-navy);
+  -webkit-mask-image: linear-gradient(to top, white, transparent);
+  mask-image: linear-gradient(to top, white, transparent);
+}
+
+.lamp__cone--left .lamp__cone-mask-side {
+  position: absolute;
+  width: 160px;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 20;
+  background: var(--color-navy);
+  -webkit-mask-image: linear-gradient(to right, white, transparent);
+  mask-image: linear-gradient(to right, white, transparent);
+}
+
+.lamp__cone--right .lamp__cone-mask-side {
+  position: absolute;
+  width: 160px;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  background: var(--color-navy);
+  -webkit-mask-image: linear-gradient(to left, white, transparent);
+  mask-image: linear-gradient(to left, white, transparent);
+}
+
+.lamp__bg-blur {
+  position: absolute;
+  top: 50%;
+  height: 192px;
+  width: 100%;
+  transform: scaleX(1.5);
+  background: var(--color-navy);
+  filter: blur(24px);
+}
+
+.lamp__backdrop {
+  position: absolute;
+  top: 50%;
+  z-index: 50;
+  height: 192px;
+  width: 100%;
+  background: transparent;
+  opacity: 0.1;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.lamp__glow {
+  position: absolute;
+  inset: auto;
+  z-index: 50;
+  height: 144px;
+  width: 448px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: var(--color-gold);
+  opacity: 0.5;
+  filter: blur(48px);
+  animation: lampConeExpand 0.8s 0.3s ease-in-out both;
+}
+
+.lamp__glow-inner {
+  position: absolute;
+  inset: auto;
+  z-index: 30;
+  height: 144px;
+  border-radius: 50%;
+  background: var(--color-gold-light);
+  filter: blur(24px);
+  animation: lampInnerExpand 0.8s 0.3s ease-in-out both;
+}
+
+.lamp__line {
+  position: absolute;
+  inset: auto;
+  z-index: 50;
+  height: 2px;
+  transform: translateY(-112px);
+  background: var(--color-gold-light);
+  animation: lampConeExpand 0.8s 0.3s ease-in-out both;
+}
+
+.lamp__cover {
+  position: absolute;
+  inset: auto;
+  z-index: 40;
+  height: 176px;
+  width: 100%;
+  transform: translateY(-200px);
+  background: var(--color-navy);
+}
+
+.lamp__content {
+  position: relative;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  margin-top: -510px;
+  transform: translateY(-230px);
+}
+
+.lamp__title {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  background: linear-gradient(to bottom right, #ffffff, #c8cdd3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 16px 0;
+  animation: lampTitleIn 0.8s 0.3s ease-in-out both;
+}
+
+.lamp__sub {
+  font-size: clamp(15px, 2vw, 18px);
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+  animation: lampTitleIn 0.8s 0.5s ease-in-out both;
+}
+
+@keyframes lampConeExpand {
+  from { opacity: 0.5; width: 240px; }
+  to { opacity: 1; width: 480px; }
+}
+
+@keyframes lampInnerExpand {
+  from { width: 128px; transform: translateY(-96px); }
+  to { width: 256px; transform: translateY(-96px); }
+}
+
+@keyframes lampTitleIn {
+  from { opacity: 0.5; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .lamp {
+    min-height: 50vh;
+    padding-top: 60px;
+  }
+  .lamp__content {
+    margin-top: -220px;
+  }
+  .lamp__effect {
+    transform: scaleY(1.1);
+  }
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 .footer {
