@@ -2,44 +2,227 @@
    DIENSTEN PAGE STYLES
    ============================================ */
 
-/* Video showcase */
-.vids {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-2xl);
-}
-
-.vids__card {
+/* ============================================
+   VIDEO PLAYER — Custom Vimeo player (shadcn adapted)
+   ============================================ */
+.vp-list {
   display: flex;
   flex-direction: column;
+  gap: var(--space-3xl);
+  max-width: 896px;
+  margin: 0 auto;
 }
 
-.vids__player {
+.vp__screen {
   position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 */
-  border-radius: var(--radius-card);
+  border-radius: 12px;
   overflow: hidden;
+  background: rgba(17, 17, 17, 0.6);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Vimeo iframe container — SDK injects responsive iframe here */
+.vp__frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
   background: var(--color-charcoal);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
-.vids__card:hover .vids__player {
-  border-color: rgba(155, 107, 201, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+.vp__frame iframe {
+  pointer-events: none;
 }
 
-.vids__player iframe {
+/* Click overlay — captures clicks for play/pause */
+.vp__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Big center play button */
+.vp__big-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.vp__big-play svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 2px;
+}
+
+.vp__big-play:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.vp--playing .vp__big-play {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---- Controls bar (glassmorphism) ---- */
+.vp__bar {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  max-width: 576px;
+  margin: 0 auto;
+  padding: 16px;
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  transform: translateY(20px);
+  opacity: 0;
+  filter: blur(10px);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+.vp__screen:hover .vp__bar {
+  transform: translateY(0);
+  opacity: 1;
+  filter: blur(0);
+  pointer-events: all;
+}
+
+/* ---- Rows ---- */
+.vp__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vp__row + .vp__row {
+  margin-top: 8px;
+}
+
+.vp__row--btns {
+  justify-content: space-between;
+}
+
+.vp__group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ---- Time display ---- */
+.vp__time {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: white;
+  min-width: 36px;
+  user-select: none;
+}
+
+/* ---- Slider tracks ---- */
+.vp__slider {
+  position: relative;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.vp__slider-fill {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
-  border: 0;
+  background: white;
+  border-radius: 9999px;
+  width: 0;
+  transition: width 0.1s linear;
 }
 
-.vids__title {
+.vp__slider--vol {
+  width: 96px;
+  flex: none;
+}
+
+/* ---- Control buttons ---- */
+.vp__btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 0;
+  background: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  padding: 0;
+}
+
+.vp__btn:hover {
+  background: rgba(17, 17, 17, 0.82);
+}
+
+.vp__btn:active {
+  transform: scale(0.9);
+}
+
+.vp__btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Speed buttons */
+.vp__spd {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.vp__spd--on {
+  background: rgba(17, 17, 17, 0.82);
+}
+
+/* ---- Icon visibility: play/pause ---- */
+.vp [data-playpause] .icon-pause { display: none; }
+.vp--playing [data-playpause] .icon-play { display: none; }
+.vp--playing [data-playpause] .icon-pause { display: block; }
+
+/* ---- Icon visibility: volume ---- */
+.vp [data-mute] .icon-vol-low,
+.vp [data-mute] .icon-vol-mute { display: none; }
+
+.vp--vol-low [data-mute] .icon-vol-high { display: none; }
+.vp--vol-low [data-mute] .icon-vol-low { display: block; }
+
+.vp--muted [data-mute] .icon-vol-high,
+.vp--muted [data-mute] .icon-vol-low { display: none; }
+.vp--muted [data-mute] .icon-vol-mute { display: block; }
+
+/* ---- Title & description ---- */
+.vp__title {
   font-family: var(--font-heading);
   font-size: var(--text-h4);
   font-weight: 600;
@@ -48,7 +231,7 @@
   margin-bottom: var(--space-sm);
 }
 
-.vids__desc {
+.vp__desc {
   font-size: var(--text-small);
   color: var(--color-gray-mid);
   line-height: 1.6;
@@ -127,7 +310,16 @@
 }
 
 @media (max-width: 768px) {
-  .vids { grid-template-columns: 1fr; }
+  .vp__bar {
+    max-width: none;
+    margin: 0 8px;
+    padding: 12px;
+  }
+  .vp__slider--vol { display: none; }
+  .vp__spd { width: 32px; height: 32px; font-size: 11px; }
+  .vp__btn { width: 32px; height: 32px; }
+  .vp__btn svg { width: 16px; height: 16px; }
+
   .process__grid { grid-template-columns: repeat(2, 1fr); }
   .process__grid::before { display: none; }
 }

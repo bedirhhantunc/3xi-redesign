@@ -81,24 +81,94 @@
   <!-- ========== EVENT VIDEOS ========== -->
   <section class="section section--dark" id="events">
     <div class="container">
-      <div class="vids" data-animate="fade-up">
+      <div class="vp-list">
 
         <!-- BeleggersFair -->
-        <div class="vids__card">
-          <div class="vids__player">
-            <iframe src="https://player.vimeo.com/video/1138048668?badge=0&autopause=0&player_id=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="BeleggersFair"></iframe>
+        <div class="vp" data-vimeo="1138048668" data-animate="fade-up">
+          <div class="vp__screen">
+            <div class="vp__frame"></div>
+            <div class="vp__overlay"></div>
+            <button class="vp__big-play" aria-label="Oynat">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+            </button>
+            <div class="vp__bar">
+              <div class="vp__row">
+                <span class="vp__time" data-current>0:00</span>
+                <div class="vp__slider" data-seek>
+                  <div class="vp__slider-fill"></div>
+                </div>
+                <span class="vp__time" data-duration>0:00</span>
+              </div>
+              <div class="vp__row vp__row--btns">
+                <div class="vp__group">
+                  <button class="vp__btn" data-playpause aria-label="Play/Pause">
+                    <svg class="icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                    <svg class="icon-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>
+                  </button>
+                  <button class="vp__btn" data-mute aria-label="Ses">
+                    <svg class="icon-vol-high" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></svg>
+                    <svg class="icon-vol-low" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/></svg>
+                    <svg class="icon-vol-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg>
+                  </button>
+                  <div class="vp__slider vp__slider--vol" data-volume>
+                    <div class="vp__slider-fill" style="width:100%"></div>
+                  </div>
+                </div>
+                <div class="vp__group">
+                  <button class="vp__btn vp__spd" data-speed="0.5">0.5x</button>
+                  <button class="vp__btn vp__spd vp__spd--on" data-speed="1">1x</button>
+                  <button class="vp__btn vp__spd" data-speed="1.5">1.5x</button>
+                  <button class="vp__btn vp__spd" data-speed="2">2x</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3 class="vids__title">BeleggersFair</h3>
-          <p class="vids__desc">Hollanda'nın en büyük yatırımcı fuarı — her yıl binlerce yatırımcıyı bir araya getiren öncü etkinlik.</p>
+          <h3 class="vp__title">BeleggersFair</h3>
+          <p class="vp__desc">Hollanda'nın en büyük yatırımcı fuarı — her yıl binlerce yatırımcıyı bir araya getiren öncü etkinlik.</p>
         </div>
 
         <!-- HypoVak -->
-        <div class="vids__card">
-          <div class="vids__player">
-            <iframe src="https://player.vimeo.com/video/1123911840?badge=0&autopause=0&player_id=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="HypoVak"></iframe>
+        <div class="vp" data-vimeo="1123911840" data-animate="fade-up">
+          <div class="vp__screen">
+            <div class="vp__frame"></div>
+            <div class="vp__overlay"></div>
+            <button class="vp__big-play" aria-label="Oynat">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+            </button>
+            <div class="vp__bar">
+              <div class="vp__row">
+                <span class="vp__time" data-current>0:00</span>
+                <div class="vp__slider" data-seek>
+                  <div class="vp__slider-fill"></div>
+                </div>
+                <span class="vp__time" data-duration>0:00</span>
+              </div>
+              <div class="vp__row vp__row--btns">
+                <div class="vp__group">
+                  <button class="vp__btn" data-playpause aria-label="Play/Pause">
+                    <svg class="icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                    <svg class="icon-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>
+                  </button>
+                  <button class="vp__btn" data-mute aria-label="Ses">
+                    <svg class="icon-vol-high" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></svg>
+                    <svg class="icon-vol-low" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/></svg>
+                    <svg class="icon-vol-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg>
+                  </button>
+                  <div class="vp__slider vp__slider--vol" data-volume>
+                    <div class="vp__slider-fill" style="width:100%"></div>
+                  </div>
+                </div>
+                <div class="vp__group">
+                  <button class="vp__btn vp__spd" data-speed="0.5">0.5x</button>
+                  <button class="vp__btn vp__spd vp__spd--on" data-speed="1">1x</button>
+                  <button class="vp__btn vp__spd" data-speed="1.5">1.5x</button>
+                  <button class="vp__btn vp__spd" data-speed="2">2x</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3 class="vids__title">HypoVak</h3>
-          <p class="vids__desc">İpotek ve konut piyasası profesyonelleri için Hollanda'nın önde gelen sektör etkinliği.</p>
+          <h3 class="vp__title">HypoVak</h3>
+          <p class="vp__desc">İpotek ve konut piyasası profesyonelleri için Hollanda'nın önde gelen sektör etkinliği.</p>
         </div>
 
       </div>
@@ -231,8 +301,10 @@
   <!-- ========== SCRIPTS ========== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/components.js"></script>
+  <script src="js/video-player.js"></script>
 </body>
 </html>
