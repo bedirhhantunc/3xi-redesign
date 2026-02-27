@@ -532,84 +532,162 @@
 
   <!-- ========== ORGANOGRAM ========== -->
   <section class="section section--charcoal" id="organogram">
+    <!-- SVG avatar definitions -->
+    <svg class="oc-defs" aria-hidden="true">
+      <defs>
+        <symbol id="av-m" viewBox="0 0 40 40">
+          <circle cx="20" cy="20" r="19.5" fill="#DDDDE0"/>
+          <circle cx="20" cy="14" r="5.5" fill="#8A8A9A"/>
+          <path d="M8 38c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="#8A8A9A"/>
+        </symbol>
+        <symbol id="av-f" viewBox="0 0 40 40">
+          <circle cx="20" cy="20" r="19.5" fill="#DDDDE0"/>
+          <circle cx="20" cy="14" r="5.5" fill="#8A8A9A"/>
+          <path d="M13 12a7 7 0 0 1 14 0v4a5 5 0 0 1-14 0z" fill="#8A8A9A" opacity="0.5"/>
+          <path d="M10 38c0-5.5 4.5-10 10-10s10 4.5 10 10" fill="#8A8A9A"/>
+        </symbol>
+      </defs>
+    </svg>
+
     <div class="container">
       <div class="gold-line" data-animate style="margin: 0 auto var(--space-lg);"></div>
       <h2 class="text-center" data-animate="fade-up">Organizasyonumuz</h2>
       <p class="text-center" data-animate="fade-up" style="color: var(--color-gray-mid); max-width: 600px; margin: var(--space-md) auto var(--space-2xl);">İki ana küme, her biri bir İş Geliştirme Direktörü tarafından yönetiliyor</p>
-      <div class="org">
-        <!-- Level 0 — CEO -->
-        <div class="org__card org__card--ceo">
-          <div class="org__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+
+      <div class="oc" data-animate="fade-up">
+        <!-- ── Header Bar ── -->
+        <div class="oc__header">
+          <div class="oc__timeline">
+            <div class="oc__tdot"></div>
+            <span class="oc__tyear">2025</span>
+            <div class="oc__tline"></div>
+            <span class="oc__tyear">2026</span>
+            <div class="oc__tdot"></div>
           </div>
-          <div class="org__info">
-            <span class="org__tag">Oprichter &amp; CEO</span>
-            <span class="org__name">Managing Director</span>
+          <h3 class="oc__htitle">ORGANOGRAM TRIPLE I 2025/2026</h3>
+        </div>
+
+        <!-- ── Chart Body ── -->
+        <div class="oc__body">
+
+          <!-- Level 0: MD with horizontal arms -->
+          <div class="oc__top">
+            <div class="oc__person">
+              <svg width="44" height="44"><use href="#av-m"/></svg>
+              <span class="oc__lbl">Strategisch<br>adviseur</span>
+            </div>
+            <div class="oc__hline"></div>
+            <div class="oc__person oc__person--md">
+              <svg width="52" height="52"><use href="#av-m"/></svg>
+              <span class="oc__lbl"><strong>Managing<br>Director</strong></span>
+            </div>
+            <div class="oc__hline"></div>
+            <div class="oc__pair">
+              <div class="oc__person">
+                <svg width="44" height="44"><use href="#av-m"/></svg>
+                <span class="oc__lbl">Controller</span>
+              </div>
+              <div class="oc__person">
+                <svg width="44" height="44"><use href="#av-f"/></svg>
+                <span class="oc__lbl">Administrateur</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vertical from MD -->
+          <div class="oc__vline"></div>
+
+          <!-- Level 1: Division fork -->
+          <div class="oc__divs">
+            <!-- Investment -->
+            <div class="oc__div">
+              <div class="oc__person oc__person--bd">
+                <svg width="44" height="44"><use href="#av-m"/></svg>
+                <span class="oc__lbl"><strong>Business Director</strong><br>Investment</span>
+              </div>
+              <div class="oc__vline oc__vline--sm"></div>
+              <div class="oc__sub">
+                <div class="oc__sub-item">
+                  <div class="oc__person">
+                    <svg width="42" height="42"><use href="#av-m"/></svg>
+                    <span class="oc__lbl">Hoofd<br>redactie</span>
+                  </div>
+                </div>
+                <div class="oc__sub-item">
+                  <div class="oc__person">
+                    <div class="oc__av-row">
+                      <svg width="38" height="38"><use href="#av-m"/></svg>
+                      <svg width="38" height="38"><use href="#av-m"/></svg>
+                    </div>
+                    <span class="oc__lbl">Sales team</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Insurance -->
+            <div class="oc__div">
+              <div class="oc__person oc__person--bd">
+                <svg width="44" height="44"><use href="#av-m"/></svg>
+                <span class="oc__lbl"><strong>Business Director</strong><br>Insurance</span>
+              </div>
+              <div class="oc__vline oc__vline--sm"></div>
+              <div class="oc__sub">
+                <div class="oc__sub-item">
+                  <div class="oc__person">
+                    <svg width="42" height="42"><use href="#av-f"/></svg>
+                    <span class="oc__lbl">Hoofd<br>redactie</span>
+                  </div>
+                </div>
+                <div class="oc__sub-item">
+                  <div class="oc__person">
+                    <div class="oc__av-row">
+                      <svg width="38" height="38"><use href="#av-m"/></svg>
+                      <svg width="38" height="38"><use href="#av-m"/></svg>
+                    </div>
+                    <span class="oc__lbl">Sales team</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="org__stem"></div>
-
-        <!-- Level 1 — Staff -->
-        <div class="org__row">
-          <div class="org__card">
-            <span class="org__tag">Advies</span>
-            <span class="org__name">Strategisch adviseur</span>
-          </div>
-          <div class="org__card">
-            <span class="org__tag">Financiën</span>
-            <span class="org__name">Controller</span>
-          </div>
-          <div class="org__card">
-            <span class="org__tag">Financiën</span>
-            <span class="org__name">Administrateur</span>
-          </div>
-        </div>
-
-        <div class="org__stem"></div>
-
-        <!-- Level 2 — Two divisions -->
-        <div class="org__branches">
-          <div class="org__branch">
-            <div class="org__card org__card--dir">
-              <span class="org__tag">Investment</span>
-              <span class="org__name">Business Director</span>
+        <!-- ── Support Departments ── -->
+        <div class="oc__support">
+          <h4 class="oc__stitle">Ondersteunende afdelingen</h4>
+          <div class="oc__srow">
+            <div class="oc__sgroup">
+              <div class="oc__av-row">
+                <svg width="38" height="38"><use href="#av-m"/></svg>
+                <svg width="38" height="38"><use href="#av-m"/></svg>
+              </div>
+              <span class="oc__lbl">Design &amp;<br>vormgeving</span>
             </div>
-            <div class="org__stem org__stem--sm"></div>
-            <div class="org__row org__row--2">
-              <div class="org__card org__card--leaf">Hoofd redactie</div>
-              <div class="org__card org__card--leaf">Sales team</div>
+            <div class="oc__sgroup">
+              <div class="oc__av-row">
+                <svg width="36" height="36"><use href="#av-f"/></svg>
+                <svg width="36" height="36"><use href="#av-m"/></svg>
+                <svg width="36" height="36"><use href="#av-f"/></svg>
+                <svg width="36" height="36"><use href="#av-m"/></svg>
+              </div>
+              <span class="oc__lbl">Eventorganisatie<br>&amp; marketing</span>
             </div>
-          </div>
-          <div class="org__branch">
-            <div class="org__card org__card--dir">
-              <span class="org__tag">Insurance</span>
-              <span class="org__name">Business Director</span>
-            </div>
-            <div class="org__stem org__stem--sm"></div>
-            <div class="org__row org__row--2">
-              <div class="org__card org__card--leaf">Hoofd redactie</div>
-              <div class="org__card org__card--leaf">Sales team</div>
+            <div class="oc__sgroup">
+              <div class="oc__av-row">
+                <svg width="36" height="36"><use href="#av-f"/></svg>
+                <svg width="36" height="36"><use href="#av-m"/></svg>
+                <svg width="36" height="36"><use href="#av-f"/></svg>
+                <svg width="36" height="36"><use href="#av-m"/></svg>
+              </div>
+              <span class="oc__lbl">Eindredactie<br>&amp; socials</span>
             </div>
           </div>
         </div>
 
-        <div class="org__stem"></div>
-
-        <!-- Level 3 — Support -->
-        <div class="org__row">
-          <div class="org__card org__card--support">
-            <span class="org__name">Design &amp; vormgeving</span>
-            <span class="org__count">2</span>
-          </div>
-          <div class="org__card org__card--support">
-            <span class="org__name">Event &amp; marketing</span>
-            <span class="org__count">4</span>
-          </div>
-          <div class="org__card org__card--support">
-            <span class="org__name">Eindredactie &amp; socials</span>
-            <span class="org__count">4</span>
-          </div>
+        <!-- ── Footer: Logo + gradient ── -->
+        <div class="oc__foot">
+          <img class="oc__logo" src="https://www.triplei.nl/wp-content/uploads/2024/03/400.png" alt="Triple I">
         </div>
       </div>
     </div>

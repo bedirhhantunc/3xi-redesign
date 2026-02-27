@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initStatsCounter();
   initGoldLines();
   initTimelineProgress();
-  initOrgChart();
 });
 
 function initHeroAnimations() {
@@ -182,25 +181,3 @@ function initTimelineProgress() {
   });
 }
 
-function initOrgChart() {
-  const org = document.querySelector('.org');
-  if (!org) return;
-
-  const items = org.querySelectorAll('.org__card, .org__stem, .org__row, .org__branches');
-  gsap.set(items, { opacity: 0, y: 20 });
-
-  ScrollTrigger.create({
-    trigger: org,
-    start: 'top 75%',
-    once: true,
-    onEnter: () => {
-      gsap.to(items, {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        stagger: 0.06,
-        ease: 'power2.out'
-      });
-    }
-  });
-}
