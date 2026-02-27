@@ -1245,7 +1245,7 @@
 
 /* ---- Department Section ---- */
 .orgrid__dept {
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-lg);
 }
 
 .orgrid__dept:first-child {
