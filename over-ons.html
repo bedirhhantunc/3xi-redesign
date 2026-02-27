@@ -532,162 +532,208 @@
 
   <!-- ========== ORGANOGRAM ========== -->
   <section class="section section--charcoal" id="organogram">
-    <!-- SVG avatar definitions -->
-    <svg class="oc-defs" aria-hidden="true">
-      <defs>
-        <symbol id="av-m" viewBox="0 0 40 40">
-          <circle cx="20" cy="20" r="19.5" fill="#DDDDE0"/>
-          <circle cx="20" cy="14" r="5.5" fill="#8A8A9A"/>
-          <path d="M8 38c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="#8A8A9A"/>
-        </symbol>
-        <symbol id="av-f" viewBox="0 0 40 40">
-          <circle cx="20" cy="20" r="19.5" fill="#DDDDE0"/>
-          <circle cx="20" cy="14" r="5.5" fill="#8A8A9A"/>
-          <path d="M13 12a7 7 0 0 1 14 0v4a5 5 0 0 1-14 0z" fill="#8A8A9A" opacity="0.5"/>
-          <path d="M10 38c0-5.5 4.5-10 10-10s10 4.5 10 10" fill="#8A8A9A"/>
-        </symbol>
-      </defs>
-    </svg>
-
     <div class="container">
       <div class="gold-line" data-animate style="margin: 0 auto var(--space-lg);"></div>
       <h2 class="text-center" data-animate="fade-up">Organizasyonumuz</h2>
       <p class="text-center" data-animate="fade-up" style="color: var(--color-gray-mid); max-width: 600px; margin: var(--space-md) auto var(--space-2xl);">İki ana küme, her biri bir İş Geliştirme Direktörü tarafından yönetiliyor</p>
 
-      <div class="oc" data-animate="fade-up">
-        <!-- ── Header Bar ── -->
-        <div class="oc__header">
-          <div class="oc__timeline">
-            <div class="oc__tdot"></div>
-            <span class="oc__tyear">2025</span>
-            <div class="oc__tline"></div>
-            <span class="oc__tyear">2026</span>
-            <div class="oc__tdot"></div>
-          </div>
-          <h3 class="oc__htitle">ORGANOGRAM TRIPLE I 2025/2026</h3>
-        </div>
-
-        <!-- ── Chart Body ── -->
-        <div class="oc__body">
-
-          <!-- Level 0: MD with horizontal arms -->
-          <div class="oc__top">
-            <div class="oc__person">
-              <svg width="44" height="44"><use href="#av-m"/></svg>
-              <span class="oc__lbl">Strategisch<br>adviseur</span>
+      <div class="orgrid" data-animate="fade-up">
+        <!-- Yönetim -->
+        <div class="orgrid__dept">
+          <h3 class="orgrid__title">Yönetim</h3>
+          <div class="orgrid__grid">
+            <div class="orgrid__member">
+              <div class="orgrid__avatar">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=face" alt="Managing Director" loading="lazy">
+              </div>
+              <span class="orgrid__name">Managing Director</span>
+              <span class="orgrid__role">Oprichter &amp; CEO</span>
             </div>
-            <div class="oc__hline"></div>
-            <div class="oc__person oc__person--md">
-              <svg width="52" height="52"><use href="#av-m"/></svg>
-              <span class="oc__lbl"><strong>Managing<br>Director</strong></span>
+            <div class="orgrid__member">
+              <div class="orgrid__avatar">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Strategisch adviseur" loading="lazy">
+              </div>
+              <span class="orgrid__name">Strategisch adviseur</span>
+              <span class="orgrid__role">Advies</span>
             </div>
-            <div class="oc__hline"></div>
-            <div class="oc__pair">
-              <div class="oc__person">
-                <svg width="44" height="44"><use href="#av-m"/></svg>
-                <span class="oc__lbl">Controller</span>
+            <div class="orgrid__member">
+              <div class="orgrid__avatar">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Controller" loading="lazy">
               </div>
-              <div class="oc__person">
-                <svg width="44" height="44"><use href="#av-f"/></svg>
-                <span class="oc__lbl">Administrateur</span>
-              </div>
+              <span class="orgrid__name">Controller</span>
+              <span class="orgrid__role">Financiën</span>
             </div>
-          </div>
-
-          <!-- Vertical from MD -->
-          <div class="oc__vline"></div>
-
-          <!-- Level 1: Division fork -->
-          <div class="oc__divs">
-            <!-- Investment -->
-            <div class="oc__div">
-              <div class="oc__person oc__person--bd">
-                <svg width="44" height="44"><use href="#av-m"/></svg>
-                <span class="oc__lbl"><strong>Business Director</strong><br>Investment</span>
+            <div class="orgrid__member">
+              <div class="orgrid__avatar">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face" alt="Administrateur" loading="lazy">
               </div>
-              <div class="oc__vline oc__vline--sm"></div>
-              <div class="oc__sub">
-                <div class="oc__sub-item">
-                  <div class="oc__person">
-                    <svg width="42" height="42"><use href="#av-m"/></svg>
-                    <span class="oc__lbl">Hoofd<br>redactie</span>
-                  </div>
-                </div>
-                <div class="oc__sub-item">
-                  <div class="oc__person">
-                    <div class="oc__av-row">
-                      <svg width="38" height="38"><use href="#av-m"/></svg>
-                      <svg width="38" height="38"><use href="#av-m"/></svg>
-                    </div>
-                    <span class="oc__lbl">Sales team</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Insurance -->
-            <div class="oc__div">
-              <div class="oc__person oc__person--bd">
-                <svg width="44" height="44"><use href="#av-m"/></svg>
-                <span class="oc__lbl"><strong>Business Director</strong><br>Insurance</span>
-              </div>
-              <div class="oc__vline oc__vline--sm"></div>
-              <div class="oc__sub">
-                <div class="oc__sub-item">
-                  <div class="oc__person">
-                    <svg width="42" height="42"><use href="#av-f"/></svg>
-                    <span class="oc__lbl">Hoofd<br>redactie</span>
-                  </div>
-                </div>
-                <div class="oc__sub-item">
-                  <div class="oc__person">
-                    <div class="oc__av-row">
-                      <svg width="38" height="38"><use href="#av-m"/></svg>
-                      <svg width="38" height="38"><use href="#av-m"/></svg>
-                    </div>
-                    <span class="oc__lbl">Sales team</span>
-                  </div>
-                </div>
-              </div>
+              <span class="orgrid__name">Administrateur</span>
+              <span class="orgrid__role">Financiën</span>
             </div>
           </div>
         </div>
 
-        <!-- ── Support Departments ── -->
-        <div class="oc__support">
-          <h4 class="oc__stitle">Ondersteunende afdelingen</h4>
-          <div class="oc__srow">
-            <div class="oc__sgroup">
-              <div class="oc__av-row">
-                <svg width="38" height="38"><use href="#av-m"/></svg>
-                <svg width="38" height="38"><use href="#av-m"/></svg>
+        <!-- Investment -->
+        <div class="orgrid__dept">
+          <h3 class="orgrid__title">Investment</h3>
+          <div class="orgrid__grid">
+            <div class="orgrid__member">
+              <div class="orgrid__avatar">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop&crop=face" alt="Business Director Investment" loading="lazy">
               </div>
-              <span class="oc__lbl">Design &amp;<br>vormgeving</span>
+              <span class="orgrid__name">Business Director</span>
+              <span class="orgrid__role">Investment</span>
             </div>
-            <div class="oc__sgroup">
-              <div class="oc__av-row">
-                <svg width="36" height="36"><use href="#av-f"/></svg>
-                <svg width="36" height="36"><use href="#av-m"/></svg>
-                <svg width="36" height="36"><use href="#av-f"/></svg>
-                <svg width="36" height="36"><use href="#av-m"/></svg>
+            <div class="orgrid__member">
+              <div class="orgrid__avatar">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face" alt="Hoofd redactie" loading="lazy">
               </div>
-              <span class="oc__lbl">Eventorganisatie<br>&amp; marketing</span>
+              <span class="orgrid__name">Hoofd redactie</span>
+              <span class="orgrid__role">Redactie</span>
             </div>
-            <div class="oc__sgroup">
-              <div class="oc__av-row">
-                <svg width="36" height="36"><use href="#av-f"/></svg>
-                <svg width="36" height="36"><use href="#av-m"/></svg>
-                <svg width="36" height="36"><use href="#av-f"/></svg>
-                <svg width="36" height="36"><use href="#av-m"/></svg>
+            <div class="orgrid__member">
+              <div class="orgrid__avatar">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop&crop=face" alt="Sales" loading="lazy">
               </div>
-              <span class="oc__lbl">Eindredactie<br>&amp; socials</span>
+              <span class="orgrid__name">Sales</span>
+              <span class="orgrid__role">Sales team</span>
+            </div>
+            <div class="orgrid__member">
+              <div class="orgrid__avatar">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face" alt="Sales" loading="lazy">
+              </div>
+              <span class="orgrid__name">Sales</span>
+              <span class="orgrid__role">Sales team</span>
             </div>
           </div>
         </div>
 
-        <!-- ── Footer: Logo + gradient ── -->
-        <div class="oc__foot">
-          <img class="oc__logo" src="https://www.triplei.nl/wp-content/uploads/2024/03/400.png" alt="Triple I">
+        <!-- Insurance -->
+        <div class="orgrid__dept">
+          <h3 class="orgrid__title">Insurance</h3>
+          <div class="orgrid__grid">
+            <div class="orgrid__member">
+              <div class="orgrid__avatar">
+                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=200&h=200&fit=crop&crop=face" alt="Business Director Insurance" loading="lazy">
+              </div>
+              <span class="orgrid__name">Business Director</span>
+              <span class="orgrid__role">Insurance</span>
+            </div>
+            <div class="orgrid__member">
+              <div class="orgrid__avatar">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face" alt="Hoofd redactie" loading="lazy">
+              </div>
+              <span class="orgrid__name">Hoofd redactie</span>
+              <span class="orgrid__role">Redactie</span>
+            </div>
+            <div class="orgrid__member">
+              <div class="orgrid__avatar">
+                <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=200&h=200&fit=crop&crop=face" alt="Sales" loading="lazy">
+              </div>
+              <span class="orgrid__name">Sales</span>
+              <span class="orgrid__role">Sales team</span>
+            </div>
+            <div class="orgrid__member">
+              <div class="orgrid__avatar">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face" alt="Sales" loading="lazy">
+              </div>
+              <span class="orgrid__name">Sales</span>
+              <span class="orgrid__role">Sales team</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ondersteunende afdelingen -->
+        <div class="orgrid__dept">
+          <h3 class="orgrid__title">Ondersteunende afdelingen</h3>
+
+          <div class="orgrid__sub-dept">
+            <h4 class="orgrid__sub-title">Design &amp; vormgeving</h4>
+            <div class="orgrid__grid">
+              <div class="orgrid__member">
+                <div class="orgrid__avatar">
+                  <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face" alt="Designer" loading="lazy">
+                </div>
+                <span class="orgrid__name">Designer</span>
+                <span class="orgrid__role">Vormgeving</span>
+              </div>
+              <div class="orgrid__member">
+                <div class="orgrid__avatar">
+                  <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&h=200&fit=crop&crop=face" alt="Designer" loading="lazy">
+                </div>
+                <span class="orgrid__name">Designer</span>
+                <span class="orgrid__role">Vormgeving</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="orgrid__sub-dept">
+            <h4 class="orgrid__sub-title">Eventorganisatie &amp; marketing</h4>
+            <div class="orgrid__grid">
+              <div class="orgrid__member">
+                <div class="orgrid__avatar">
+                  <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=200&h=200&fit=crop&crop=face" alt="Event" loading="lazy">
+                </div>
+                <span class="orgrid__name">Event manager</span>
+                <span class="orgrid__role">Organisatie</span>
+              </div>
+              <div class="orgrid__member">
+                <div class="orgrid__avatar">
+                  <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&h=200&fit=crop&crop=face" alt="Marketing" loading="lazy">
+                </div>
+                <span class="orgrid__name">Marketing</span>
+                <span class="orgrid__role">Campagnes</span>
+              </div>
+              <div class="orgrid__member">
+                <div class="orgrid__avatar">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face" alt="Event" loading="lazy">
+                </div>
+                <span class="orgrid__name">Event coördinator</span>
+                <span class="orgrid__role">Organisatie</span>
+              </div>
+              <div class="orgrid__member">
+                <div class="orgrid__avatar">
+                  <img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=200&h=200&fit=crop&crop=face" alt="Marketing" loading="lazy">
+                </div>
+                <span class="orgrid__name">Marketing</span>
+                <span class="orgrid__role">Content</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="orgrid__sub-dept">
+            <h4 class="orgrid__sub-title">Eindredactie &amp; socials</h4>
+            <div class="orgrid__grid">
+              <div class="orgrid__member">
+                <div class="orgrid__avatar">
+                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=face" alt="Eindredactie" loading="lazy">
+                </div>
+                <span class="orgrid__name">Eindredacteur</span>
+                <span class="orgrid__role">Redactie</span>
+              </div>
+              <div class="orgrid__member">
+                <div class="orgrid__avatar">
+                  <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=200&h=200&fit=crop&crop=face" alt="Socials" loading="lazy">
+                </div>
+                <span class="orgrid__name">Social media</span>
+                <span class="orgrid__role">Content</span>
+              </div>
+              <div class="orgrid__member">
+                <div class="orgrid__avatar">
+                  <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&h=200&fit=crop&crop=face" alt="Redactie" loading="lazy">
+                </div>
+                <span class="orgrid__name">Redacteur</span>
+                <span class="orgrid__role">Redactie</span>
+              </div>
+              <div class="orgrid__member">
+                <div class="orgrid__avatar">
+                  <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=200&h=200&fit=crop&crop=face" alt="Socials" loading="lazy">
+                </div>
+                <span class="orgrid__name">Social media</span>
+                <span class="orgrid__role">Strategie</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
