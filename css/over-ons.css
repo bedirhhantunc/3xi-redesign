@@ -1233,115 +1233,206 @@
 }
 
 /* ============================================
-   ORGANOGRAM — Interactive HTML Chart
+   ORGANOGRAM — Premium Constellation Chart
    ============================================ */
 .org {
-  max-width: 900px;
+  position: relative;
+  max-width: 920px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 40px 16px;
 }
 
-/* Vertical connector line */
-.org__line {
-  width: 2px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.1);
-  flex-shrink: 0;
+/* Radial glow — light source from CEO */
+.org__glow {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(155, 107, 201, 0.07) 0%, rgba(155, 107, 201, 0.02) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.org__line--short {
-  height: 20px;
-}
-
-/* Level — horizontal row of cards */
-.org__level {
+/* Tier — row of cards */
+.org__tier {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
-  align-items: stretch;
+}
+
+.org__tier--row {
   gap: 12px;
   flex-wrap: wrap;
 }
 
-/* ---- Card base ---- */
+/* ==== CARD BASE ==== */
 .org__card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 14px 22px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.03);
-  transition: all 0.3s ease;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 
 .org__card:hover {
-  border-color: rgba(155, 107, 201, 0.25);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  border-color: rgba(155, 107, 201, 0.3);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(155, 107, 201, 0.06);
 }
 
-/* CEO card — gold accent */
+/* ==== CEO CARD — Animated spinning gradient border ==== */
 .org__card--ceo {
-  background: linear-gradient(135deg, rgba(155, 107, 201, 0.12), rgba(155, 107, 201, 0.04));
-  border-color: rgba(155, 107, 201, 0.3);
-  padding: 20px 40px;
-  gap: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .org__card--ceo:hover {
-  border-color: rgba(155, 107, 201, 0.5);
-  box-shadow: 0 8px 32px rgba(155, 107, 201, 0.15);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(155, 107, 201, 0.2);
 }
 
-.org__icon {
+/* Pulsing glow behind CEO */
+.org__card-glow {
+  position: absolute;
+  inset: -24px;
+  border-radius: 36px;
+  background: radial-gradient(circle, rgba(155, 107, 201, 0.18) 0%, transparent 70%);
+  z-index: -1;
+  animation: ceoGlow 3s ease-in-out infinite;
+}
+
+@keyframes ceoGlow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+/* Spinning gradient ring */
+.org__card-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.org__card-ring::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220%;
+  height: 220%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+    from 0deg,
+    var(--color-gold),
+    transparent 70deg,
+    var(--color-gold-light) 180deg,
+    transparent 250deg,
+    var(--color-gold)
+  );
+  animation: ringRotate 6s linear infinite;
+}
+
+@keyframes ringRotate {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Inner body — covers the gradient leaving 2px border visible */
+.org__card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 52px;
+  border-radius: 18px;
+  margin: 2px;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.97), rgba(26, 26, 46, 0.95));
+}
+
+.org__card-body svg {
   color: var(--color-gold);
+  filter: drop-shadow(0 0 10px rgba(155, 107, 201, 0.6));
 }
 
-.org__card--ceo .org__name {
-  font-size: 16px;
+.org__card--ceo .org__role {
+  font-size: 18px;
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
-/* Director card */
-.org__card--director {
-  border-color: rgba(155, 107, 201, 0.2);
-  padding: 16px 28px;
+/* ==== BD CARD — Gold gradient border ==== */
+.org__card--bd {
+  border-color: rgba(155, 107, 201, 0.25);
+  background: linear-gradient(135deg, rgba(155, 107, 201, 0.06), rgba(255, 255, 255, 0.015));
+  padding: 18px 30px;
   gap: 4px;
 }
 
-/* Staff card */
+.org__card--bd:hover {
+  border-color: rgba(155, 107, 201, 0.45);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    0 0 24px rgba(155, 107, 201, 0.1);
+}
+
+/* ==== Staff card ==== */
 .org__card--staff {
-  gap: 4px;
+  gap: 5px;
+  padding: 14px 24px;
 }
 
-/* Team card */
-.org__card--team {
+/* ==== Leaf / team card ==== */
+.org__card--leaf {
   font-size: 13px;
   color: var(--color-gray-mid);
-  padding: 10px 18px;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
-/* Support card — horizontal layout */
+/* ==== Support card ==== */
 .org__card--support {
   flex-direction: row;
   gap: 10px;
   padding: 12px 20px;
+  border-radius: 10px;
 }
 
-/* Tag label */
-.org__tag {
+/* Label tag */
+.org__label {
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--color-gold);
 }
 
-/* Name/title text */
-.org__name {
+/* Role name */
+.org__role {
   font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 600;
@@ -1349,98 +1440,170 @@
 }
 
 /* Count badge */
-.org__count {
+.org__badge {
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 700;
   color: var(--color-gold);
   background: rgba(155, 107, 201, 0.12);
-  padding: 2px 10px;
+  border: 1px solid rgba(155, 107, 201, 0.15);
+  padding: 3px 10px;
   border-radius: 100px;
   flex-shrink: 0;
 }
 
-/* ---- Branches — two clusters side by side ---- */
-.org__branches {
-  display: flex;
-  justify-content: center;
-  gap: 48px;
+/* ==== WIRES — Animated connection lines ==== */
+.org__wire {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(155, 107, 201, 0.18), rgba(255, 255, 255, 0.03));
   position: relative;
-  padding-top: 32px;
+  overflow: hidden;
+  z-index: 1;
+  flex-shrink: 0;
 }
 
-/* Horizontal connector bar across branches */
-.org__branches::before {
+.org__wire--sm {
+  height: 24px;
+}
+
+/* Traveling light pulse on wires */
+.org__wire > span {
+  position: absolute;
+  top: -80%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent, var(--color-gold), transparent);
+  border-radius: 2px;
+  animation: wirePulse 3s ease-in-out infinite;
+}
+
+@keyframes wirePulse {
+  0% { top: -50%; opacity: 0; }
+  30% { opacity: 0.8; }
+  70% { opacity: 0.8; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Stagger pulse per level */
+.org__tier--row ~ .org__wire > span { animation-delay: 0.4s; }
+.org__fork ~ .org__wire > span { animation-delay: 0.8s; }
+.org__wire--sm > span { animation-delay: 0.6s; }
+
+/* ==== FORK — Branch split ==== */
+.org__fork {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  position: relative;
+  padding-top: 44px;
+  z-index: 1;
+}
+
+/* Horizontal bar */
+.org__fork::before {
   content: '';
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 55%;
+  width: 60%;
   height: 2px;
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(155, 107, 201, 0.2) 20%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(155, 107, 201, 0.2) 80%,
+    transparent
+  );
 }
 
-/* Single cluster (director + teams) */
-.org__cluster {
+/* Horizontal traveling pulse */
+.org__fork::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20%;
+  width: 40px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--color-gold);
+  filter: blur(3px);
+  opacity: 0;
+  animation: forkSweep 4s ease-in-out infinite;
+}
+
+@keyframes forkSweep {
+  0% { left: 20%; opacity: 0; }
+  15% { opacity: 0.6; }
+  85% { opacity: 0.6; }
+  100% { left: 80%; opacity: 0; }
+}
+
+/* Branch cluster */
+.org__branch {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
 
-/* Vertical drop from horizontal bar to director card */
-.org__cluster::before {
+/* Vertical drop from fork bar to director */
+.org__branch::before {
   content: '';
   position: absolute;
-  top: -32px;
+  top: -44px;
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.1);
+  height: 44px;
+  background: linear-gradient(to bottom, rgba(155, 107, 201, 0.18), rgba(255, 255, 255, 0.03));
 }
 
-/* Teams row */
-.org__teams {
-  display: flex;
-  gap: 10px;
-}
-
-/* Support row */
-.org__level--support {
-  gap: 10px;
-}
-
-/* ---- Responsive ---- */
+/* ==== RESPONSIVE ==== */
 @media (max-width: 768px) {
-  .org__branches {
+  .org {
+    padding: 24px 12px;
+  }
+
+  .org__glow {
+    width: 300px;
+    height: 300px;
+  }
+
+  .org__fork {
     flex-direction: column;
-    gap: 24px;
-    align-items: center;
+    gap: 16px;
     padding-top: 0;
+    align-items: center;
   }
 
-  .org__branches::before {
+  .org__fork::before,
+  .org__fork::after {
     display: none;
   }
 
-  .org__cluster::before {
+  .org__branch::before {
     display: none;
   }
 
-  .org__level--support {
+  .org__tier--row {
     flex-direction: column;
     align-items: center;
   }
 
-  .org__teams {
-    flex-direction: column;
-    align-items: center;
+  .org__branch .org__tier--row {
+    flex-direction: row;
   }
 
-  .org__card--ceo {
-    padding: 16px 28px;
+  .org__card-body {
+    padding: 20px 32px;
+  }
+
+  .org__tier--support {
+    gap: 8px;
   }
 }
 

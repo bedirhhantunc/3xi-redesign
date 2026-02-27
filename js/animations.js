@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStatsCounter();
   initGoldLines();
   initTimelineProgress();
+  initOrgChart();
 });
 
 function initHeroAnimations() {
@@ -178,5 +179,49 @@ function initTimelineProgress() {
         scrollTrigger: { trigger: entry, start: 'top 85%', once: true }
       }
     );
+  });
+}
+
+function initOrgChart() {
+  const org = document.querySelector('.org');
+  if (!org) return;
+
+  // Stagger cards tier by tier
+  const tiers = org.querySelectorAll('.org__tier');
+  const wires = org.querySelectorAll('.org__wire');
+  const fork = org.querySelector('.org__fork');
+
+  // Set initial hidden states
+  gsap.set([...tiers, ...wires], { opacity: 0, y: 24 });
+  if (fork) gsap.set(fork, { opacity: 0, y: 24 });
+
+  ScrollTrigger.create({
+    trigger: org,
+    start: 'top 75%',
+    once: true,
+    onEnter: () => {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      // Tier 1: CEO card
+      if (tiers[0]) tl.to(tiers[0], { opacity: 1, y: 0, duration: 0.6 });
+
+      // Wire 1
+      if (wires[0]) tl.to(wires[0], { opacity: 1, y: 0, duration: 0.4 }, '-=0.2');
+
+      // Tier 2: Staff row
+      if (tiers[1]) tl.to(tiers[1], { opacity: 1, y: 0, duration: 0.6 }, '-=0.15');
+
+      // Wire 2
+      if (wires[1]) tl.to(wires[1], { opacity: 1, y: 0, duration: 0.4 }, '-=0.2');
+
+      // Fork (branches)
+      if (fork) tl.to(fork, { opacity: 1, y: 0, duration: 0.7 }, '-=0.15');
+
+      // Wire 3
+      if (wires[2]) tl.to(wires[2], { opacity: 1, y: 0, duration: 0.4 }, '-=0.2');
+
+      // Tier 3: Support row
+      if (tiers[2]) tl.to(tiers[2], { opacity: 1, y: 0, duration: 0.6 }, '-=0.15');
+    }
   });
 }
