@@ -637,6 +637,163 @@
   text-align: center;
 }
 
+/* ============================================
+   INDUSTRIES & BRANDS — Brand portfolio grid
+   ============================================ */
+.ib {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.ib__vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+/* Vertical header */
+.ib__vertical-header {
+  padding: var(--space-xl) var(--space-xl) var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.ib__vertical-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.ib__vertical-header--invest::before {
+  background: linear-gradient(90deg, var(--color-gold), #C084FC);
+}
+
+.ib__vertical-header--mortgage::before {
+  background: linear-gradient(90deg, #34D399, #06B6D4);
+}
+
+.ib__vertical-header--insurance::before {
+  background: linear-gradient(90deg, #F59E0B, #EF4444);
+}
+
+.ib__vertical-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gray-mid);
+  margin-bottom: var(--space-sm);
+}
+
+.ib__vertical-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h4);
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0;
+}
+
+/* Cluster */
+.ib__cluster {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.ib__cluster-num {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  opacity: 0.6;
+  flex-shrink: 0;
+  width: 24px;
+  padding-top: 4px;
+}
+
+.ib__cluster-body {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Brand pills */
+.ib__brand-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ib__brand {
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-gray);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.ib__brand:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+}
+
+/* Accent brands (events/key brands) */
+.ib__brand--accent {
+  background: rgba(155, 107, 201, 0.1);
+  border-color: rgba(155, 107, 201, 0.2);
+  color: var(--color-gold);
+}
+
+.ib__brand--accent:hover {
+  background: rgba(155, 107, 201, 0.18);
+  border-color: rgba(155, 107, 201, 0.35);
+}
+
+/* Web brands */
+.ib__brand--web {
+  background: rgba(52, 211, 153, 0.06);
+  border-color: rgba(52, 211, 153, 0.12);
+  color: #6EE7B7;
+}
+
+.ib__brand--web:hover {
+  background: rgba(52, 211, 153, 0.12);
+  border-color: rgba(52, 211, 153, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .ib {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .ib__cluster {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .ib__vertical-header {
+    padding: var(--space-lg) var(--space-lg) var(--space-md);
+  }
+}
+
 .stats-bar .stats--four {
   max-width: 1000px;
   margin: 0 auto;
