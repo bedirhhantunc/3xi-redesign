@@ -308,57 +308,53 @@ html[data-theme="light"] .lamp__dot {
 }
 
 /* ============================================
-   10. FOOTER — PINNED DARK
+   10. FOOTER — LIGHT MODE
    ============================================ */
 html[data-theme="light"] .footer {
-  background: #0D0D0D;
-  color: #F5F5F7;
-  border-top-color: rgba(255, 255, 255, 0.05);
-}
-
-html[data-theme="light"] .footer * {
-  color: inherit;
+  background: #EEEDF2;
+  color: #1A1A2E;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 html[data-theme="light"] .footer__heading {
-  color: #9B6BC9;
+  color: #8254B5;
 }
 
 html[data-theme="light"] .footer__text {
-  color: #8A8A9A;
+  color: #6B6B7B;
 }
 
 html[data-theme="light"] .footer__link {
-  color: #8A8A9A;
+  color: #6B6B7B;
 }
 
 html[data-theme="light"] .footer__link:hover {
-  color: #9B6BC9;
+  color: #8254B5;
 }
 
 html[data-theme="light"] .footer__legal {
-  border-top-color: rgba(255, 255, 255, 0.06);
+  border-top-color: rgba(0, 0, 0, 0.06);
 }
 
 html[data-theme="light"] .footer__legal-link {
-  color: #E8E8ED;
+  color: #6B6B7B;
 }
 
 html[data-theme="light"] .footer__legal-link:hover {
-  color: #9B6BC9;
+  color: #8254B5;
 }
 
 html[data-theme="light"] .footer__socials a {
-  color: #E8E8ED;
+  color: #6B6B7B;
 }
 
 html[data-theme="light"] .footer__socials a:hover {
-  color: #9B6BC9;
+  color: #8254B5;
 }
 
 html[data-theme="light"] .footer__bottom {
-  color: #8A8A9A;
-  border-top-color: rgba(255, 255, 255, 0.05);
+  color: #6B6B7B;
+  border-top-color: rgba(0, 0, 0, 0.06);
 }
 
 /* ============================================
