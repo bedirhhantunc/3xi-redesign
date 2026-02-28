@@ -12,6 +12,18 @@ html[data-theme="light"] *::after {
   transition-timing-function: ease;
 }
 
+/* Exclude dark-pinned sections from theme transition */
+html[data-theme="light"] .hero,
+html[data-theme="light"] .hero *,
+html[data-theme="light"] .hero *::before,
+html[data-theme="light"] .hero *::after,
+html[data-theme="light"] .lamp,
+html[data-theme="light"] .lamp *,
+html[data-theme="light"] .lamp *::before,
+html[data-theme="light"] .lamp *::after {
+  transition-property: none !important;
+}
+
 /* ============================================
    1. CSS VARIABLE OVERRIDES
    ============================================ */
