@@ -358,19 +358,19 @@ html[data-theme="light"] .footer__bottom {
 }
 
 /* ============================================
-   11. CTA SECTION — PINNED DARK
+   11. CTA SECTION — LIGHT MODE
    ============================================ */
 html[data-theme="light"] .cta-section {
-  background: linear-gradient(135deg, #0A1628 0%, #1A1A2E 50%, #0F1D32 100%);
-  color: #F5F5F7;
+  background: #EEEDF2;
+  color: #1A1A2E;
 }
 
 html[data-theme="light"] .cta-section h2 {
-  color: #F5F5F7;
+  color: #1A1A2E;
 }
 
 html[data-theme="light"] .cta-section p {
-  color: #8A8A9A;
+  color: #6B6B7B;
 }
 
 html[data-theme="light"] .cta-section .btn--gold {
