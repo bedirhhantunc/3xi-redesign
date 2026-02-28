@@ -59,15 +59,15 @@ html[data-theme="light"] a:hover {
    3. NAVIGATION — Light glass nav pill
    ============================================ */
 html[data-theme="light"] .nav__pill {
-  background: rgba(255, 255, 255, 0.65);
-  border-color: rgba(0, 0, 0, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.04);
 }
 
 html[data-theme="light"] .nav--scrolled .nav__pill {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(130, 84, 181, 0.12);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(130, 84, 181, 0.05);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(130, 84, 181, 0.15);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(130, 84, 181, 0.08);
 }
 
 /* Logo: remove white invert, show dark version */
@@ -79,9 +79,9 @@ html[data-theme="light"] .nav__logo:hover img {
   filter: brightness(0) invert(0) drop-shadow(0 0 8px rgba(0, 0, 0, 0.15));
 }
 
-/* Nav link text colors */
+/* Nav link text colors — strong contrast */
 html[data-theme="light"] .nav__link-text span:first-child {
-  color: rgba(26, 26, 46, 0.5);
+  color: rgba(26, 26, 46, 0.7);
 }
 
 html[data-theme="light"] .nav__link-text span:last-child {
@@ -92,13 +92,19 @@ html[data-theme="light"] .nav__link--active .nav__link-text span:first-child {
   color: #1A1A2E;
 }
 
-/* CTA stays purple with white text */
+html[data-theme="light"] .nav__link:hover .nav__link-text span:first-child {
+  color: #8254B5;
+}
+
+/* CTA — stronger shadow for visibility */
 html[data-theme="light"] .nav__cta {
   color: #fff;
+  box-shadow: 0 2px 12px rgba(130, 84, 181, 0.25);
 }
 
 html[data-theme="light"] .nav__cta:hover {
   color: #fff;
+  box-shadow: 0 4px 20px rgba(130, 84, 181, 0.35);
 }
 
 /* Hamburger */
@@ -910,15 +916,15 @@ html[data-theme="light"] .carousel__item:hover {
 }
 
 html[data-theme="light"] .theme-toggle {
-  border-color: rgba(0, 0, 0, 0.1);
-  background: rgba(0, 0, 0, 0.04);
-  color: rgba(26, 26, 46, 0.7);
+  border-color: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.06);
+  color: #1A1A2E;
 }
 
 html[data-theme="light"] .theme-toggle:hover {
-  background: rgba(0, 0, 0, 0.08);
-  border-color: rgba(0, 0, 0, 0.15);
-  color: #1A1A2E;
+  background: rgba(130, 84, 181, 0.1);
+  border-color: rgba(130, 84, 181, 0.25);
+  color: #8254B5;
 }
 
 html[data-theme="light"] .theme-toggle .icon-moon {
