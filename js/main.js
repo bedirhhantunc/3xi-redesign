@@ -1,6 +1,7 @@
 // main.js — Global: navigation, smooth scroll, mobile menu
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initNavigation();
   // initNavIndicator(); — removed: pill navbar no longer uses sliding indicator
   initSmoothScroll();
@@ -10,6 +11,37 @@ document.addEventListener('DOMContentLoaded', () => {
   initChannelCarousel();
   initValueGauges();
 });
+
+// ============================================
+// THEME TOGGLE — Dark / Light mode
+// ============================================
+function initThemeToggle() {
+  const toggle = document.querySelector('.theme-toggle');
+  if (!toggle) return;
+
+  function getTheme() {
+    return localStorage.getItem('theme') ||
+      (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  }
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+
+  // Toggle click handler
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || getTheme();
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  // Listen for OS preference changes (only if no manual preference saved)
+  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      setTheme(e.matches ? 'light' : 'dark');
+    }
+  });
+}
 
 function initNavigation() {
   const nav = document.querySelector('.nav');
