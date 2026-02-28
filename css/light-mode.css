@@ -277,24 +277,26 @@ html[data-theme="light"] .lamp__cover {
 }
 
 html[data-theme="light"] .lamp__cone--left {
-  background: conic-gradient(from 70deg at center top, #8254B5, transparent, transparent);
+  background: conic-gradient(from 70deg at center top, rgba(130, 84, 181, 0.4), transparent, transparent);
 }
 
 html[data-theme="light"] .lamp__cone--right {
-  background: conic-gradient(from 290deg at center top, transparent, transparent, #8254B5);
+  background: conic-gradient(from 290deg at center top, transparent, transparent, rgba(130, 84, 181, 0.4));
 }
 
 html[data-theme="light"] .lamp__glow {
-  background: #8254B5;
-  opacity: 0.35;
+  background: rgba(130, 84, 181, 0.25);
+  opacity: 0.4;
+  filter: blur(72px);
 }
 
 html[data-theme="light"] .lamp__glow-inner {
-  background: #9B6BC9;
+  background: rgba(155, 107, 201, 0.2);
+  filter: blur(40px);
 }
 
 html[data-theme="light"] .lamp__line {
-  background: #8254B5;
+  background: rgba(130, 84, 181, 0.5);
 }
 
 html[data-theme="light"] .lamp__title {
