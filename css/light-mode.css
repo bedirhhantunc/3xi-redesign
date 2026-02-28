@@ -700,6 +700,11 @@ html[data-theme="light"] .vcard:hover .vcard__glass {
     0 0 16px rgba(0, 0, 0, 0.08);
 }
 
+html[data-theme="light"] .vcard__badge--strong {
+  background: rgba(0, 0, 0, 0.08) !important;
+  color: #1A1A2E !important;
+}
+
 html[data-theme="light"] .vcard__gauge-bg {
   stroke: rgba(0, 0, 0, 0.08);
 }
