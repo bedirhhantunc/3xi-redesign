@@ -362,6 +362,12 @@ html[data-theme="light"] .footer__bottom {
   border-top-color: rgba(0, 0, 0, 0.06);
 }
 
+/* Footer logo — dark on light bg */
+html[data-theme="light"] .footer .nav__logo img {
+  filter: brightness(0) invert(0);
+  opacity: 0.7;
+}
+
 /* ============================================
    11. CTA SECTION — LIGHT MODE
    ============================================ */
@@ -380,6 +386,15 @@ html[data-theme="light"] .cta-section p {
 
 html[data-theme="light"] .cta-section .btn--gold {
   color: #fff;
+}
+
+/* Soften glow-pulse on light bg */
+html[data-theme="light"] .cta-section .glow-pulse {
+  box-shadow: 0 4px 20px rgba(130, 84, 181, 0.2);
+}
+
+html[data-theme="light"] .cta-section .glow-pulse:hover {
+  box-shadow: 0 8px 32px rgba(130, 84, 181, 0.25);
 }
 
 /* ============================================
