@@ -608,7 +608,8 @@
     padding-top: 60px;
   }
   .lamp__content {
-    margin-top: -220px;
+    margin-top: -170px;
+    transform: translateY(-30px);
   }
   .lamp__effect {
     transform: scaleY(1.1);
